@@ -1,0 +1,8 @@
+# ninja log v5
+2	444	7464325790200334	CMakeFiles/FinalAssignment.dir/main.cpp.obj	2b9fa683d13fddea
+445	565	7464325791370313	FinalAssignment.exe	40978ffb4bd6dc77
+0	359	7464459910721808	build.ninja	106e1bb73dfcb1b0
+7	434	7464459915741058	CMakeFiles/FinalAssignment.dir/src/main.cpp.obj	3373f4a76f21c63e
+3	520	7464459916568150	CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.obj	56a81dbeb6cbbf5f
+0	618	7464459917551144	CMakeFiles/FinalAssignment.dir/src/Graph.cpp.obj	ab6f70837f1dc543
+618	874	7464459920092613	FinalAssignment.exe	64d2304666b42a54
