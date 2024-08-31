@@ -22,7 +22,14 @@ void Graph::addEdge(int vertex1, int vertex2) {
 
     edgeList.emplace_back(vertex1, vertex2);
 }
+void Graph::weightaddEdge(int vertex1, int vertex2, double weight) {    //sun A*
+    weightadjList[vertex1].push_back({vertex2, weight});
+    weightadjList[vertex2].push_back({vertex1, weight}); // 无向图
+}
 
+const std::vector<std::pair<int, double>>& Graph::getNeighbors(int vertex) const {   //sun A*
+    return weightadjList[vertex];
+}
 void Graph::printAdjList() const {
     std::cout << "Adjacency List:" << std::endl;
     for (const auto& pair : adjList) {

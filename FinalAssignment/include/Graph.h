@@ -17,6 +17,9 @@ public:
     void addVertex(int vertex);
     void addEdge(int vertex1, int vertex2);
 
+    void weightaddEdge(int vertex1, int vertex2, double weight);  //sun
+    const std::vector<std::pair<int, double>>& getNeighbors(int vertex) const;  //sun
+
     void printAdjList() const;
     void printAdjMatrix() const;
     void printEdgeList() const;
@@ -30,6 +33,7 @@ public:
 
 private:
     std::map<int, std::vector<int>> adjList;
+    std::vector<std::vector<std::pair<int, double>>> weightadjList;  //sun A*
     std::vector<std::vector<int>> adjMatrix;
     std::vector<std::pair<int, int>> edgeList;
     int size;
