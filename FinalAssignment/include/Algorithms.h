@@ -23,6 +23,10 @@ std::vector<int> topologicalSort(const Graph& graph);
 std::vector<int> topologicalSortDFS(const Graph& graph);
 void findArticulationPointsAndBridges(const Graph& graph, std::vector<bool>& isAP, std::vector<std::pair<int, int>>& bridges);
 //冯碧川的改动结束
+void prim(const Graph& graph);//liujun
+std::vector<std::vector<int>> kruskal(const Graph& graph);//liujun
+std::vector<std::vector<int>> biconnectComponents(Graph& graph);//liujun
+std::pair<int, int> dmst(const Graph& graph); //liujun
 class UnionFind {   //sun 并查集
 public:
     // 构造函数，初始化 n 个节点的并查集

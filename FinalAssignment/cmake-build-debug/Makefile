@@ -47,19 +47,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "E:\CLion 2024.2.0.1\bin\cmake\win\x64\bin\cmake.exe"
+CMAKE_COMMAND = D:\soft\CLion\CLion-2024.2.0.1.win\bin\cmake\win\x64\bin\cmake.exe
 
 # The command to remove a file.
-RM = "E:\CLion 2024.2.0.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
+RM = D:\soft\CLion\CLion-2024.2.0.1.win\bin\cmake\win\x64\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment"
+CMAKE_SOURCE_DIR = D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\cmake-build-debug"
+CMAKE_BINARY_DIR = D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skri
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
-	"E:\CLion 2024.2.0.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	D:\soft\CLion\CLion-2024.2.0.1.win\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -77,7 +77,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	"E:\CLion 2024.2.0.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	D:\soft\CLion\CLion-2024.2.0.1.win\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\cmake-build-debug\CMakeFiles" "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\cmake-build-debug\\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\cmake-build-debug\CMakeFiles D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target

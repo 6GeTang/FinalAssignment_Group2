@@ -1,4 +1,4 @@
-set(CMAKE_RC_COMPILER "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/windres.exe")
+set(CMAKE_RC_COMPILER "D:/soft/CLion/CLion-2024.2.0.1.win/bin/mingw/bin/windres.exe")
 set(CMAKE_RC_COMPILER_ARG1 "")
 set(CMAKE_RC_COMPILER_LOADED 1)
 set(CMAKE_RC_SOURCE_FILE_EXTENSIONS rc;RC)

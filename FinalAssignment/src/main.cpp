@@ -293,6 +293,47 @@ int main() {
     }
     std::cout << std::endl;
 
+    //测试 kruskal 和 prim
+    // 创建图并添加边
+    // Graph graph(5);
+    //
+    // graph.weightAddEdge(0, 1, 1);
+    // graph.weightAddEdge(0, 2, 4);
+    // graph.weightAddEdge(1, 2, 2);
+    // graph.weightAddEdge(1, 3, 5);
+    // graph.weightAddEdge(2, 3, 1);
+    // graph.weightAddEdge(3, 4, 3);
+
+    //测试kruskal  liujun
+    // std::vector<std::vector<int>> mst =kruskal(graph);
+    // for (const auto& edge : mst) {
+    //     std::cout << "Edge: " << edge[0] << " -- " << edge[1] << " Weight: " << edge[2] << std::endl;
+    // }
+    //测试prim   liujun
+    //    prim(graph);
+
+    //测试dmst  liujun
+    // std::cout << "The minimum spanning tree is: " << std::endl;
+    // std::pair<int, int> result = dmst(graph);
+    // std::cout << result.first << "--" << result.second << std::endl;
+
+    //测试 biconnectComponents   liujun
+    // Graph graph(5);
+    // graph.addEdge(0,1);
+    // graph.addEdge(0,2);
+    // graph.addEdge(1,2);
+    // graph.addEdge(1,3);
+    // graph.addEdge(2,3);
+    // graph.addEdge(3,4);
+    //
+    // std::vector<std::vector<int>> results = biconnectComponents(graph);
+    // for (const auto& component : results) {
+    //     for (int vertex : component) {
+    //         std::cout << vertex << " ";
+    //     }
+    //     std::cout << std::endl;
+    // }
+
 
     return 0;
 }

@@ -793,3 +793,152 @@ void BFS(const Graph& graph, int startVertex) {
 }
 
 //冯碧川的改动结束
+
+// 定义一个比较函数，用于比较两个子向量的第三个元素  //liujun
+bool compareThirdElement(const std::vector<int>& a, const std::vector<int>& b) {
+    return a[2] < b[2];
+}
+
+
+//Kruskal算法
+std::vector<std::vector<int>> kruskal(const Graph& graph) {  //liujun
+    //整一个边集
+    std::vector<std::vector<int>> edges = graph.getWeightadjEdgeList();
+    //把边集从小到大排序
+    std::sort(edges.begin(), edges.end(), compareThirdElement);
+     //初始化并查集，把点整进去
+     UnionFind unionFind(graph.getSize());
+    //初始化最小生成树的边列表
+    std::vector<std::vector<int>> mst;
+//    遍历边集，看看即将加进去的边两边的点是不是一个集合,如果不是，就加进去，否则就跳过
+    for (const auto& edge : edges) {
+        int u = edge[0];
+        int v = edge[1];
+        int weight = edge[2];
+
+        // 如果两个点不在同一个集合中，则将这两个点连接起来
+        if (!unionFind.connected(u, v)) {
+            //std::cout << "Add edge: " << u << " - " << v << " with weight: " << weight << std::endl;
+            unionFind.unite(u, v);
+            std::vector<int> edge = {u, v, weight};
+            mst.push_back(edge);
+        }
+    }
+    return mst;
+    // std::cout << "Minimum Spanning Tree:" << std::endl;
+    // for (const auto& edge : mst) {
+    //     std::cout << edge[0] << " - " << edge[1] << " with weight: " << edge[2] << std::endl;
+    // }
+}
+
+
+//prim算法
+void prim(const Graph &graph) {  //liujun
+    //初始化一个向量，用来记录哪个顶点已访问
+    std::vector<int> record;
+    record.reserve(graph.getSize());
+    for(int i : record) {
+        record[i] = 0;
+    }
+    //选一个初始顶点，作为以访问
+    record[0] = 1;
+    //整一个边集
+    std::vector<std::vector<int>> edges = graph.getWeightadjEdgeList();
+    //把边集从小到大排序
+    std::sort(edges.begin(), edges.end(), compareThirdElement);
+    //定义一个最小生成树
+    std::vector<std::pair<int,int>> mst;
+    for(int i = 0; i < edges.size(); i++) {
+        if(record[edges[i][0]] == 1 && record[edges[i][1]] == 1) {
+            continue;
+        } else {
+            mst.push_back(std::make_pair(edges[i][0], edges[i][1]));
+            if(record[edges[i][0]] == 0) {
+                record[edges[i][0]] = 1;
+            } else {
+                record[edges[i][1]] = 1;
+            }
+        }
+    }
+    std::cout << "Minimum Spanning Tree:" << std::endl;
+    for (const auto& edge : mst) {
+        std::cout << edge.first << " - " << edge.second << std::endl;
+    }
+}
+
+// 辅助函数，用于DFS遍历 //liujun   beconnect Components
+void DFSBC(Graph& graph, int vertex, std::vector<bool>& visited) {
+    visited[vertex] = true; // 标记顶点为已访问
+    std::stack<int> stack;
+    stack.push(vertex); // 将顶点压入栈中
+
+    while (!stack.empty()) {
+        int currentVertex = stack.top();
+        stack.pop(); // 弹出顶点
+
+        for (int neighbor : graph.getAdjList().at(currentVertex)) {
+            if (!visited[neighbor]) {
+                visited[neighbor] = true; // 标记邻居顶点为已访问
+                stack.push(neighbor); // 将邻居顶点压入栈中
+            }
+        }
+    }
+}
+
+
+
+// Biconnect Components算法实现
+std::vector<std::vector<int>> biconnectComponents(Graph& graph) {
+    std::vector<bool> visited(graph.getSize(), false); // 访问数组
+    std::vector<std::vector<int>> components; // 存储所有连通分量
+
+    for (int i = 0; i < graph.getSize(); i++) {
+        if (!visited[i]) {
+            std::vector<int> component;
+            DFS(graph, i, visited); // 进行DFS遍历
+            components.push_back(component); // 将连通分量添加到结果中
+        }
+    }
+
+    return components;
+}
+
+// DMST算法实现
+std::pair<int, int> dmst(const Graph& graph) {    //liujun
+    std::vector<std::vector<int>> mst = kruskal(graph);
+    UnionFind unionFind(graph.getSize());
+    std::vector<bool> visited(graph.getSize(), false);
+
+    for (int i = 0; i < graph.getSize(); ++i) {
+        visited[i] = true;
+    }
+
+    std::vector<std::vector<int>> cutEdges;
+    int resultVectex =-1;
+
+    for (const auto& edge : mst) {
+        int x = edge[0];
+        int y = edge[1];
+        int xRoot = unionFind.find(x);
+        int yRoot = unionFind.find(y);
+
+        if (xRoot != yRoot) {
+            visited[x] = false;
+            visited[y] = false;
+            cutEdges.push_back(edge);
+            unionFind.unite(xRoot, yRoot);
+        }
+    }
+
+    int minCutWeight = INT_MAX;
+    for (const auto& edge : cutEdges) {
+        int weight = edge[2];
+        int vec = edge[0];
+        if (weight < minCutWeight) {
+            minCutWeight = weight;
+            resultVectex = vec;
+        }
+    }
+
+    return std::make_pair(resultVectex, minCutWeight);
+}

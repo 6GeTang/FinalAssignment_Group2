@@ -23,6 +23,15 @@ void Graph::addEdge(int vertex1, int vertex2) {
     edgeList.emplace_back(vertex1, vertex2);
 }
 
+void Graph::weightAddEdge(int vertex1, int vertex2, int weight) { //liujun
+    std::vector<int> v;
+    v.reserve(3);
+    v.push_back(vertex1);
+    v.push_back(vertex2);
+    v.push_back(weight);
+    weightadjEdgeList.push_back(v);
+}
+
 void Graph::addEdge1(int vertex1, int vertex2, int value) {//lzy
     adjList[vertex1].push_back(vertex2);
     adjList[vertex2].push_back(vertex1); // 无向图
@@ -136,3 +145,7 @@ Graph Graph::generateTransposedGraph() const {
 }
 
 //冯碧川的改动结束
+
+const std::vector<std::vector<int>>& Graph::getWeightadjEdgeList() const { //liujun
+    return weightadjEdgeList;
+}

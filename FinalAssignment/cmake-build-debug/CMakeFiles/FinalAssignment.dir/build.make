@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "E:\CLion 2024.2.0.1\bin\cmake\win\x64\bin\cmake.exe"
+CMAKE_COMMAND = D:\soft\CLion\CLion-2024.2.0.1.win\bin\cmake\win\x64\bin\cmake.exe
 
 # The command to remove a file.
-RM = "E:\CLion 2024.2.0.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
+RM = D:\soft\CLion\CLion-2024.2.0.1.win\bin\cmake\win\x64\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment"
+CMAKE_SOURCE_DIR = D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\cmake-build-debug"
+CMAKE_BINARY_DIR = D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/FinalAssignment.dir/depend.make
@@ -70,48 +70,48 @@ include CMakeFiles/FinalAssignment.dir/flags.make
 
 CMakeFiles/FinalAssignment.dir/src/main.cpp.obj: CMakeFiles/FinalAssignment.dir/flags.make
 CMakeFiles/FinalAssignment.dir/src/main.cpp.obj: CMakeFiles/FinalAssignment.dir/includes_CXX.rsp
-CMakeFiles/FinalAssignment.dir/src/main.cpp.obj: C:/Users/FENGBICHUAN/OneDrive\ -\ Högskolan\ Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/src/main.cpp
+CMakeFiles/FinalAssignment.dir/src/main.cpp.obj: D:/1learn/Git/liujun/FinalAssignment_Group2/FinalAssignment/src/main.cpp
 CMakeFiles/FinalAssignment.dir/src/main.cpp.obj: CMakeFiles/FinalAssignment.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/FinalAssignment.dir/src/main.cpp.obj"
-	E:\llvm-mingw-20240619-msvcrt-x86_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FinalAssignment.dir/src/main.cpp.obj -MF CMakeFiles\FinalAssignment.dir\src\main.cpp.obj.d -o CMakeFiles\FinalAssignment.dir\src\main.cpp.obj -c "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\src\main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/FinalAssignment.dir/src/main.cpp.obj"
+	D:\soft\CLion\CLion-2024.2.0.1.win\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FinalAssignment.dir/src/main.cpp.obj -MF CMakeFiles\FinalAssignment.dir\src\main.cpp.obj.d -o CMakeFiles\FinalAssignment.dir\src\main.cpp.obj -c D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\src\main.cpp
 
 CMakeFiles/FinalAssignment.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FinalAssignment.dir/src/main.cpp.i"
-	E:\llvm-mingw-20240619-msvcrt-x86_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\src\main.cpp" > CMakeFiles\FinalAssignment.dir\src\main.cpp.i
+	D:\soft\CLion\CLion-2024.2.0.1.win\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\src\main.cpp > CMakeFiles\FinalAssignment.dir\src\main.cpp.i
 
 CMakeFiles/FinalAssignment.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FinalAssignment.dir/src/main.cpp.s"
-	E:\llvm-mingw-20240619-msvcrt-x86_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\src\main.cpp" -o CMakeFiles\FinalAssignment.dir\src\main.cpp.s
+	D:\soft\CLion\CLion-2024.2.0.1.win\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\src\main.cpp -o CMakeFiles\FinalAssignment.dir\src\main.cpp.s
 
 CMakeFiles/FinalAssignment.dir/src/Graph.cpp.obj: CMakeFiles/FinalAssignment.dir/flags.make
 CMakeFiles/FinalAssignment.dir/src/Graph.cpp.obj: CMakeFiles/FinalAssignment.dir/includes_CXX.rsp
-CMakeFiles/FinalAssignment.dir/src/Graph.cpp.obj: C:/Users/FENGBICHUAN/OneDrive\ -\ Högskolan\ Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/src/Graph.cpp
+CMakeFiles/FinalAssignment.dir/src/Graph.cpp.obj: D:/1learn/Git/liujun/FinalAssignment_Group2/FinalAssignment/src/Graph.cpp
 CMakeFiles/FinalAssignment.dir/src/Graph.cpp.obj: CMakeFiles/FinalAssignment.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/FinalAssignment.dir/src/Graph.cpp.obj"
-	E:\llvm-mingw-20240619-msvcrt-x86_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FinalAssignment.dir/src/Graph.cpp.obj -MF CMakeFiles\FinalAssignment.dir\src\Graph.cpp.obj.d -o CMakeFiles\FinalAssignment.dir\src\Graph.cpp.obj -c "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\src\Graph.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/FinalAssignment.dir/src/Graph.cpp.obj"
+	D:\soft\CLion\CLion-2024.2.0.1.win\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FinalAssignment.dir/src/Graph.cpp.obj -MF CMakeFiles\FinalAssignment.dir\src\Graph.cpp.obj.d -o CMakeFiles\FinalAssignment.dir\src\Graph.cpp.obj -c D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\src\Graph.cpp
 
 CMakeFiles/FinalAssignment.dir/src/Graph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FinalAssignment.dir/src/Graph.cpp.i"
-	E:\llvm-mingw-20240619-msvcrt-x86_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\src\Graph.cpp" > CMakeFiles\FinalAssignment.dir\src\Graph.cpp.i
+	D:\soft\CLion\CLion-2024.2.0.1.win\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\src\Graph.cpp > CMakeFiles\FinalAssignment.dir\src\Graph.cpp.i
 
 CMakeFiles/FinalAssignment.dir/src/Graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FinalAssignment.dir/src/Graph.cpp.s"
-	E:\llvm-mingw-20240619-msvcrt-x86_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\src\Graph.cpp" -o CMakeFiles\FinalAssignment.dir\src\Graph.cpp.s
+	D:\soft\CLion\CLion-2024.2.0.1.win\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\src\Graph.cpp -o CMakeFiles\FinalAssignment.dir\src\Graph.cpp.s
 
 CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.obj: CMakeFiles/FinalAssignment.dir/flags.make
 CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.obj: CMakeFiles/FinalAssignment.dir/includes_CXX.rsp
-CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.obj: C:/Users/FENGBICHUAN/OneDrive\ -\ Högskolan\ Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/src/Algorithms.cpp
+CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.obj: D:/1learn/Git/liujun/FinalAssignment_Group2/FinalAssignment/src/Algorithms.cpp
 CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.obj: CMakeFiles/FinalAssignment.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.obj"
-	E:\llvm-mingw-20240619-msvcrt-x86_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.obj -MF CMakeFiles\FinalAssignment.dir\src\Algorithms.cpp.obj.d -o CMakeFiles\FinalAssignment.dir\src\Algorithms.cpp.obj -c "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\src\Algorithms.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.obj"
+	D:\soft\CLion\CLion-2024.2.0.1.win\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.obj -MF CMakeFiles\FinalAssignment.dir\src\Algorithms.cpp.obj.d -o CMakeFiles\FinalAssignment.dir\src\Algorithms.cpp.obj -c D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\src\Algorithms.cpp
 
 CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.i"
-	E:\llvm-mingw-20240619-msvcrt-x86_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\src\Algorithms.cpp" > CMakeFiles\FinalAssignment.dir\src\Algorithms.cpp.i
+	D:\soft\CLion\CLion-2024.2.0.1.win\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\src\Algorithms.cpp > CMakeFiles\FinalAssignment.dir\src\Algorithms.cpp.i
 
 CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.s"
-	E:\llvm-mingw-20240619-msvcrt-x86_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\src\Algorithms.cpp" -o CMakeFiles\FinalAssignment.dir\src\Algorithms.cpp.s
+	D:\soft\CLion\CLion-2024.2.0.1.win\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\src\Algorithms.cpp -o CMakeFiles\FinalAssignment.dir\src\Algorithms.cpp.s
 
 # Object files for target FinalAssignment
 FinalAssignment_OBJECTS = \
@@ -129,7 +129,7 @@ FinalAssignment.exe: CMakeFiles/FinalAssignment.dir/build.make
 FinalAssignment.exe: CMakeFiles/FinalAssignment.dir/linkLibs.rsp
 FinalAssignment.exe: CMakeFiles/FinalAssignment.dir/objects1.rsp
 FinalAssignment.exe: CMakeFiles/FinalAssignment.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable FinalAssignment.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable FinalAssignment.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\FinalAssignment.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -141,6 +141,6 @@ CMakeFiles/FinalAssignment.dir/clean:
 .PHONY : CMakeFiles/FinalAssignment.dir/clean
 
 CMakeFiles/FinalAssignment.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment" "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment" "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\cmake-build-debug" "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\cmake-build-debug" "C:\Users\FENGBICHUAN\OneDrive - Högskolan Kristianstad\Skrivbordet\FinalAssignment_Group2\FinalAssignment\cmake-build-debug\CMakeFiles\FinalAssignment.dir\DependInfo.cmake" "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\cmake-build-debug D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\cmake-build-debug D:\1learn\Git\liujun\FinalAssignment_Group2\FinalAssignment\cmake-build-debug\CMakeFiles\FinalAssignment.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/FinalAssignment.dir/depend
 

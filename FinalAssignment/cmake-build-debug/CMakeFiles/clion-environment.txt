@@ -1,5 +1,5 @@
-ToolSet: 13.0 w64 (local)@E:\llvm-mingw-20240619-msvcrt-x86_64
-Ninja: 1.12.0@E:\CLion 2024.2.0.1\bin\ninja\win\x64\ninja.exe
+ToolSet: 11.0 w64 (local)@D:\soft\CLion\CLion-2024.2.0.1.win\bin\mingw
+Ninja: 1.12.0@D:\soft\CLion\CLion-2024.2.0.1.win\bin\ninja\win\x64\ninja.exe
 Options: 
 
 Options:

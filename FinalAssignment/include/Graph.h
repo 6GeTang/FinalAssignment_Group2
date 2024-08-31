@@ -27,6 +27,7 @@ public:
 
     void addVertex(int vertex);
     void addEdge(int vertex1, int vertex2);
+    void weightAddEdge(int vertex1, int vertex2, int weight); // liujun
     void addEdge1(int vertex1, int vertex2, int value);//lzy
     void addEdge2(int vertex1, int vertex2, int value);//lzy
 
@@ -41,11 +42,13 @@ public:
     const std::map<int, std::vector<int>>& getAdjList() const;
     const std::vector<std::vector<int>>& getAdjMatrix() const;
     const std::vector<std::pair<int, int>>& getEdgeList() const;
+    const std::vector<std::vector<int>>& getWeightadjEdgeList() const; // liujun
 
     int getSize() const;
 
 private:
     std::map<int, std::vector<int>> adjList;
+    std::vector<std::vector<int>> weightadjEdgeList;
     std::vector<std::vector<std::pair<int, double>>> weightadjList;  //sun A*
     std::vector<std::vector<int>> adjMatrix;
     std::vector<std::pair<int, int>> edgeList;
