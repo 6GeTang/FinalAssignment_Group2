@@ -61,8 +61,13 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
+<<<<<<< HEAD
       source: "C:/Users/FENGBICHUAN/OneDrive - H\u00f6gskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bda1l6"
       binary: "C:/Users/FENGBICHUAN/OneDrive - H\u00f6gskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bda1l6"
+=======
+      source: "C:/Users/FENGBICHUAN/OneDrive - H\u00f6gskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fheko8"
+      binary: "C:/Users/FENGBICHUAN/OneDrive - H\u00f6gskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fheko8"
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/clang-scan-deps.exe"
       CMAKE_C_FLAGS: ""
@@ -72,6 +77,7 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
+<<<<<<< HEAD
         Change Dir: 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bda1l6'
         
         Run Build Command(s): "E:/CLion 2024.2.0.1/bin/cmake/win/x64/bin/cmake.exe" -E env VERBOSE=1 E:/llvm-mingw-20240619-msvcrt-x86_64/bin/mingw32-make.exe -f Makefile cmTC_af123/fast
@@ -79,12 +85,25 @@ events:
         mingw32-make[1]: Entering directory 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bda1l6'
         Building C object CMakeFiles/cmTC_af123.dir/CMakeCCompilerABI.c.obj
         E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\cc.exe   -fansi-escape-codes -fcolor-diagnostics   -v -MD -MT CMakeFiles/cmTC_af123.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_af123.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles\\cmTC_af123.dir\\CMakeCCompilerABI.c.obj -c "E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+=======
+        Change Dir: 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fheko8'
+        
+        Run Build Command(s): "E:/CLion 2024.2.0.1/bin/cmake/win/x64/bin/cmake.exe" -E env VERBOSE=1 E:/llvm-mingw-20240619-msvcrt-x86_64/bin/mingw32-make.exe -f Makefile cmTC_60fe4/fast
+        E:/llvm-mingw-20240619-msvcrt-x86_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_60fe4.dir\\build.make CMakeFiles/cmTC_60fe4.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fheko8'
+        Building C object CMakeFiles/cmTC_60fe4.dir/CMakeCCompilerABI.c.obj
+        E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\cc.exe   -fansi-escape-codes -fcolor-diagnostics   -v -MD -MT CMakeFiles/cmTC_60fe4.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_60fe4.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles\\cmTC_60fe4.dir\\CMakeCCompilerABI.c.obj -c "E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
         clang version 18.1.8 (https://github.com/llvm/llvm-project.git 3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff)
         Target: x86_64-w64-windows-gnu
         Thread model: posix
         InstalledDir: E:/llvm-mingw-20240619-msvcrt-x86_64/bin
          (in-process)
+<<<<<<< HEAD
          "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/clang-18.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb "-fdebug-compilation-dir=C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bda1l6" -v "-fcoverage-compilation-dir=C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bda1l6" -resource-dir E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18 -dependency-file "CMakeFiles\\\\cmTC_af123.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_af123.dir/CMakeCCompilerABI.c.obj -sys-header-deps -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/usr/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/include -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -exception-model=seh -fcolor-diagnostics -fansi-escape-codes -faddrsig -o "CMakeFiles\\\\cmTC_af123.dir\\\\CMakeCCompilerABI.c.obj" -x c "E:\\\\CLion 2024.2.0.1\\\\bin\\\\cmake\\\\win\\\\x64\\\\share\\\\cmake-3.29\\\\Modules\\\\CMakeCCompilerABI.c"
+=======
+         "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/clang-18.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb "-fdebug-compilation-dir=C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fheko8" -v "-fcoverage-compilation-dir=C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fheko8" -resource-dir E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18 -dependency-file "CMakeFiles\\\\cmTC_60fe4.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_60fe4.dir/CMakeCCompilerABI.c.obj -sys-header-deps -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/usr/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/include -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -exception-model=seh -fcolor-diagnostics -fansi-escape-codes -faddrsig -o "CMakeFiles\\\\cmTC_60fe4.dir\\\\CMakeCCompilerABI.c.obj" -x c "E:\\\\CLion 2024.2.0.1\\\\bin\\\\cmake\\\\win\\\\x64\\\\share\\\\cmake-3.29\\\\Modules\\\\CMakeCCompilerABI.c"
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
         clang -cc1 version 18.1.8 based upon LLVM 18.1.8 default target x86_64-w64-mingw32
         ignoring nonexistent directory "E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include"
         ignoring nonexistent directory "E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/usr/include"
@@ -93,18 +112,32 @@ events:
          E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/include
          E:/llvm-mingw-20240619-msvcrt-x86_64/include
         End of search list.
+<<<<<<< HEAD
         Linking C executable cmTC_af123.exe
         "E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_af123.dir\\link.txt --verbose=1
         "E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_af123.dir/objects.a
         E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_af123.dir/objects.a @CMakeFiles\\cmTC_af123.dir\\objects1.rsp
         E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\cc.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_af123.dir/objects.a -Wl,--no-whole-archive -o cmTC_af123.exe -Wl,--out-implib,libcmTC_af123.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+=======
+        Linking C executable cmTC_60fe4.exe
+        "E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_60fe4.dir\\link.txt --verbose=1
+        "E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_60fe4.dir/objects.a
+        E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_60fe4.dir/objects.a @CMakeFiles\\cmTC_60fe4.dir\\objects1.rsp
+        E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\cc.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_60fe4.dir/objects.a -Wl,--no-whole-archive -o cmTC_60fe4.exe -Wl,--out-implib,libcmTC_60fe4.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
         clang version 18.1.8 (https://github.com/llvm/llvm-project.git 3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff)
         Target: x86_64-w64-windows-gnu
         Thread model: posix
         InstalledDir: E:/llvm-mingw-20240619-msvcrt-x86_64/bin
+<<<<<<< HEAD
          "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_af123.exe E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crt2.o E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtbegin.o -LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/mingw/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows -v --whole-archive "CMakeFiles\\\\cmTC_af123.dir/objects.a" --no-whole-archive --out-implib libcmTC_af123.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtend.o
         LLD 18.1.8 (compatible with GNU linkers)
         mingw32-make[1]: Leaving directory 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bda1l6'
+=======
+         "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_60fe4.exe E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crt2.o E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtbegin.o -LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/mingw/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows -v --whole-archive "CMakeFiles\\\\cmTC_60fe4.dir/objects.a" --no-whole-archive --out-implib libcmTC_60fe4.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtend.o
+        LLD 18.1.8 (compatible with GNU linkers)
+        mingw32-make[1]: Leaving directory 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fheko8'
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
         
       exitCode: 0
   -
@@ -135,6 +168,7 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+<<<<<<< HEAD
         ignore line: [Change Dir: 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bda1l6']
         ignore line: []
         ignore line: [Run Build Command(s): "E:/CLion 2024.2.0.1/bin/cmake/win/x64/bin/cmake.exe" -E env VERBOSE=1 E:/llvm-mingw-20240619-msvcrt-x86_64/bin/mingw32-make.exe -f Makefile cmTC_af123/fast]
@@ -142,12 +176,25 @@ events:
         ignore line: [mingw32-make[1]: Entering directory 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bda1l6']
         ignore line: [Building C object CMakeFiles/cmTC_af123.dir/CMakeCCompilerABI.c.obj]
         ignore line: [E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\cc.exe   -fansi-escape-codes -fcolor-diagnostics   -v -MD -MT CMakeFiles/cmTC_af123.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_af123.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles\\cmTC_af123.dir\\CMakeCCompilerABI.c.obj -c "E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"]
+=======
+        ignore line: [Change Dir: 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fheko8']
+        ignore line: []
+        ignore line: [Run Build Command(s): "E:/CLion 2024.2.0.1/bin/cmake/win/x64/bin/cmake.exe" -E env VERBOSE=1 E:/llvm-mingw-20240619-msvcrt-x86_64/bin/mingw32-make.exe -f Makefile cmTC_60fe4/fast]
+        ignore line: [E:/llvm-mingw-20240619-msvcrt-x86_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_60fe4.dir\\build.make CMakeFiles/cmTC_60fe4.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fheko8']
+        ignore line: [Building C object CMakeFiles/cmTC_60fe4.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\cc.exe   -fansi-escape-codes -fcolor-diagnostics   -v -MD -MT CMakeFiles/cmTC_60fe4.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_60fe4.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles\\cmTC_60fe4.dir\\CMakeCCompilerABI.c.obj -c "E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"]
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
         ignore line: [clang version 18.1.8 (https://github.com/llvm/llvm-project.git 3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff)]
         ignore line: [Target: x86_64-w64-windows-gnu]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: E:/llvm-mingw-20240619-msvcrt-x86_64/bin]
         ignore line: [ (in-process)]
+<<<<<<< HEAD
         ignore line: [ "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/clang-18.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb "-fdebug-compilation-dir=C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bda1l6" -v "-fcoverage-compilation-dir=C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bda1l6" -resource-dir E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18 -dependency-file "CMakeFiles\\\\cmTC_af123.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_af123.dir/CMakeCCompilerABI.c.obj -sys-header-deps -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/usr/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/include -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -exception-model=seh -fcolor-diagnostics -fansi-escape-codes -faddrsig -o "CMakeFiles\\\\cmTC_af123.dir\\\\CMakeCCompilerABI.c.obj" -x c "E:\\\\CLion 2024.2.0.1\\\\bin\\\\cmake\\\\win\\\\x64\\\\share\\\\cmake-3.29\\\\Modules\\\\CMakeCCompilerABI.c"]
+=======
+        ignore line: [ "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/clang-18.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb "-fdebug-compilation-dir=C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fheko8" -v "-fcoverage-compilation-dir=C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fheko8" -resource-dir E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18 -dependency-file "CMakeFiles\\\\cmTC_60fe4.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_60fe4.dir/CMakeCCompilerABI.c.obj -sys-header-deps -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/usr/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/include -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -exception-model=seh -fcolor-diagnostics -fansi-escape-codes -faddrsig -o "CMakeFiles\\\\cmTC_60fe4.dir\\\\CMakeCCompilerABI.c.obj" -x c "E:\\\\CLion 2024.2.0.1\\\\bin\\\\cmake\\\\win\\\\x64\\\\share\\\\cmake-3.29\\\\Modules\\\\CMakeCCompilerABI.c"]
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
         ignore line: [clang -cc1 version 18.1.8 based upon LLVM 18.1.8 default target x86_64-w64-mingw32]
         ignore line: [ignoring nonexistent directory "E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include"]
         ignore line: [ignoring nonexistent directory "E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/usr/include"]
@@ -156,22 +203,38 @@ events:
         ignore line: [ E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/include]
         ignore line: [ E:/llvm-mingw-20240619-msvcrt-x86_64/include]
         ignore line: [End of search list.]
+<<<<<<< HEAD
         ignore line: [Linking C executable cmTC_af123.exe]
         ignore line: ["E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_af123.dir\\link.txt --verbose=1]
         ignore line: ["E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_af123.dir/objects.a]
         ignore line: [E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_af123.dir/objects.a @CMakeFiles\\cmTC_af123.dir\\objects1.rsp]
         ignore line: [E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\cc.exe  -v -Wl -v -Wl --whole-archive CMakeFiles\\cmTC_af123.dir/objects.a -Wl --no-whole-archive -o cmTC_af123.exe -Wl --out-implib libcmTC_af123.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+=======
+        ignore line: [Linking C executable cmTC_60fe4.exe]
+        ignore line: ["E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_60fe4.dir\\link.txt --verbose=1]
+        ignore line: ["E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_60fe4.dir/objects.a]
+        ignore line: [E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_60fe4.dir/objects.a @CMakeFiles\\cmTC_60fe4.dir\\objects1.rsp]
+        ignore line: [E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\cc.exe  -v -Wl -v -Wl --whole-archive CMakeFiles\\cmTC_60fe4.dir/objects.a -Wl --no-whole-archive -o cmTC_60fe4.exe -Wl --out-implib libcmTC_60fe4.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
         ignore line: [clang version 18.1.8 (https://github.com/llvm/llvm-project.git 3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff)]
         ignore line: [Target: x86_64-w64-windows-gnu]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: E:/llvm-mingw-20240619-msvcrt-x86_64/bin]
+<<<<<<< HEAD
         link line: [ "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_af123.exe E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crt2.o E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtbegin.o -LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/mingw/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows -v --whole-archive "CMakeFiles\\\\cmTC_af123.dir/objects.a" --no-whole-archive --out-implib libcmTC_af123.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtend.o]
+=======
+        link line: [ "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_60fe4.exe E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crt2.o E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtbegin.o -LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/mingw/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows -v --whole-archive "CMakeFiles\\\\cmTC_60fe4.dir/objects.a" --no-whole-archive --out-implib libcmTC_60fe4.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtend.o]
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
           arg [E:/llvm-mingw-20240619-msvcrt-x86_64/bin/ld.lld] ==> ignore
           arg [-m] ==> ignore
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
+<<<<<<< HEAD
           arg [cmTC_af123.exe] ==> ignore
+=======
+          arg [cmTC_60fe4.exe] ==> ignore
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
           arg [E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crt2.o] ==> obj [E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crt2.o]
           arg [E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtbegin.o] ==> obj [E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtbegin.o]
           arg [-LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib] ==> dir [E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib]
@@ -180,10 +243,17 @@ events:
           arg [-LE:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows] ==> dir [E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows]
           arg [-v] ==> ignore
           arg [--whole-archive] ==> ignore
+<<<<<<< HEAD
           arg [CMakeFiles\\\\cmTC_af123.dir/objects.a] ==> ignore
           arg [--no-whole-archive] ==> ignore
           arg [--out-implib] ==> ignore
           arg [libcmTC_af123.dll.a] ==> ignore
+=======
+          arg [CMakeFiles\\\\cmTC_60fe4.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_60fe4.dll.a] ==> ignore
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -240,8 +310,13 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
+<<<<<<< HEAD
       source: "C:/Users/FENGBICHUAN/OneDrive - H\u00f6gskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ck89bp"
       binary: "C:/Users/FENGBICHUAN/OneDrive - H\u00f6gskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ck89bp"
+=======
+      source: "C:/Users/FENGBICHUAN/OneDrive - H\u00f6gskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-i22qz3"
+      binary: "C:/Users/FENGBICHUAN/OneDrive - H\u00f6gskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-i22qz3"
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/clang-scan-deps.exe"
       CMAKE_CXX_FLAGS: ""
@@ -252,6 +327,7 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
+<<<<<<< HEAD
         Change Dir: 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ck89bp'
         
         Run Build Command(s): "E:/CLion 2024.2.0.1/bin/cmake/win/x64/bin/cmake.exe" -E env VERBOSE=1 E:/llvm-mingw-20240619-msvcrt-x86_64/bin/mingw32-make.exe -f Makefile cmTC_570dc/fast
@@ -259,12 +335,25 @@ events:
         mingw32-make[1]: Entering directory 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ck89bp'
         Building CXX object CMakeFiles/cmTC_570dc.dir/CMakeCXXCompilerABI.cpp.obj
         E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\c++.exe   -fansi-escape-codes -fcolor-diagnostics   -v -MD -MT CMakeFiles/cmTC_570dc.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_570dc.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles\\cmTC_570dc.dir\\CMakeCXXCompilerABI.cpp.obj -c "E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+=======
+        Change Dir: 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-i22qz3'
+        
+        Run Build Command(s): "E:/CLion 2024.2.0.1/bin/cmake/win/x64/bin/cmake.exe" -E env VERBOSE=1 E:/llvm-mingw-20240619-msvcrt-x86_64/bin/mingw32-make.exe -f Makefile cmTC_ead03/fast
+        E:/llvm-mingw-20240619-msvcrt-x86_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_ead03.dir\\build.make CMakeFiles/cmTC_ead03.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-i22qz3'
+        Building CXX object CMakeFiles/cmTC_ead03.dir/CMakeCXXCompilerABI.cpp.obj
+        E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\c++.exe   -fansi-escape-codes -fcolor-diagnostics   -v -MD -MT CMakeFiles/cmTC_ead03.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_ead03.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles\\cmTC_ead03.dir\\CMakeCXXCompilerABI.cpp.obj -c "E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
         clang version 18.1.8 (https://github.com/llvm/llvm-project.git 3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff)
         Target: x86_64-w64-windows-gnu
         Thread model: posix
         InstalledDir: E:/llvm-mingw-20240619-msvcrt-x86_64/bin
          (in-process)
+<<<<<<< HEAD
          "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/clang-18.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb "-fdebug-compilation-dir=C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ck89bp" -v "-fcoverage-compilation-dir=C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ck89bp" -resource-dir E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18 -dependency-file "CMakeFiles\\\\cmTC_570dc.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_570dc.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include/c++/v1 -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/include/c++/v1 -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/usr/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/include -fdeprecated-macro -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -exception-model=seh -fcolor-diagnostics -fansi-escape-codes -faddrsig -o "CMakeFiles\\\\cmTC_570dc.dir\\\\CMakeCXXCompilerABI.cpp.obj" -x c++ "E:\\\\CLion 2024.2.0.1\\\\bin\\\\cmake\\\\win\\\\x64\\\\share\\\\cmake-3.29\\\\Modules\\\\CMakeCXXCompilerABI.cpp"
+=======
+         "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/clang-18.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb "-fdebug-compilation-dir=C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-i22qz3" -v "-fcoverage-compilation-dir=C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-i22qz3" -resource-dir E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18 -dependency-file "CMakeFiles\\\\cmTC_ead03.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_ead03.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include/c++/v1 -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/include/c++/v1 -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/usr/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/include -fdeprecated-macro -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -exception-model=seh -fcolor-diagnostics -fansi-escape-codes -faddrsig -o "CMakeFiles\\\\cmTC_ead03.dir\\\\CMakeCXXCompilerABI.cpp.obj" -x c++ "E:\\\\CLion 2024.2.0.1\\\\bin\\\\cmake\\\\win\\\\x64\\\\share\\\\cmake-3.29\\\\Modules\\\\CMakeCXXCompilerABI.cpp"
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
         clang -cc1 version 18.1.8 based upon LLVM 18.1.8 default target x86_64-w64-mingw32
         ignoring nonexistent directory "E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include/c++/v1"
         ignoring nonexistent directory "E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include"
@@ -275,18 +364,32 @@ events:
          E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/include
          E:/llvm-mingw-20240619-msvcrt-x86_64/include
         End of search list.
+<<<<<<< HEAD
         Linking CXX executable cmTC_570dc.exe
         "E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_570dc.dir\\link.txt --verbose=1
         "E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_570dc.dir/objects.a
         E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_570dc.dir/objects.a @CMakeFiles\\cmTC_570dc.dir\\objects1.rsp
         E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\c++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_570dc.dir/objects.a -Wl,--no-whole-archive -o cmTC_570dc.exe -Wl,--out-implib,libcmTC_570dc.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+=======
+        Linking CXX executable cmTC_ead03.exe
+        "E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_ead03.dir\\link.txt --verbose=1
+        "E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_ead03.dir/objects.a
+        E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_ead03.dir/objects.a @CMakeFiles\\cmTC_ead03.dir\\objects1.rsp
+        E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\c++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_ead03.dir/objects.a -Wl,--no-whole-archive -o cmTC_ead03.exe -Wl,--out-implib,libcmTC_ead03.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
         clang version 18.1.8 (https://github.com/llvm/llvm-project.git 3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff)
         Target: x86_64-w64-windows-gnu
         Thread model: posix
         InstalledDir: E:/llvm-mingw-20240619-msvcrt-x86_64/bin
+<<<<<<< HEAD
          "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_570dc.exe E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crt2.o E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtbegin.o -LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/mingw/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows -v --whole-archive "CMakeFiles\\\\cmTC_570dc.dir/objects.a" --no-whole-archive --out-implib libcmTC_570dc.dll.a --major-image-version 0 --minor-image-version 0 -lc++ -lmingw32 E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtend.o
         LLD 18.1.8 (compatible with GNU linkers)
         mingw32-make[1]: Leaving directory 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ck89bp'
+=======
+         "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_ead03.exe E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crt2.o E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtbegin.o -LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/mingw/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows -v --whole-archive "CMakeFiles\\\\cmTC_ead03.dir/objects.a" --no-whole-archive --out-implib libcmTC_ead03.dll.a --major-image-version 0 --minor-image-version 0 -lc++ -lmingw32 E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtend.o
+        LLD 18.1.8 (compatible with GNU linkers)
+        mingw32-make[1]: Leaving directory 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-i22qz3'
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
         
       exitCode: 0
   -
@@ -319,6 +422,7 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+<<<<<<< HEAD
         ignore line: [Change Dir: 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ck89bp']
         ignore line: []
         ignore line: [Run Build Command(s): "E:/CLion 2024.2.0.1/bin/cmake/win/x64/bin/cmake.exe" -E env VERBOSE=1 E:/llvm-mingw-20240619-msvcrt-x86_64/bin/mingw32-make.exe -f Makefile cmTC_570dc/fast]
@@ -326,12 +430,25 @@ events:
         ignore line: [mingw32-make[1]: Entering directory 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ck89bp']
         ignore line: [Building CXX object CMakeFiles/cmTC_570dc.dir/CMakeCXXCompilerABI.cpp.obj]
         ignore line: [E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\c++.exe   -fansi-escape-codes -fcolor-diagnostics   -v -MD -MT CMakeFiles/cmTC_570dc.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_570dc.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles\\cmTC_570dc.dir\\CMakeCXXCompilerABI.cpp.obj -c "E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"]
+=======
+        ignore line: [Change Dir: 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-i22qz3']
+        ignore line: []
+        ignore line: [Run Build Command(s): "E:/CLion 2024.2.0.1/bin/cmake/win/x64/bin/cmake.exe" -E env VERBOSE=1 E:/llvm-mingw-20240619-msvcrt-x86_64/bin/mingw32-make.exe -f Makefile cmTC_ead03/fast]
+        ignore line: [E:/llvm-mingw-20240619-msvcrt-x86_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_ead03.dir\\build.make CMakeFiles/cmTC_ead03.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-i22qz3']
+        ignore line: [Building CXX object CMakeFiles/cmTC_ead03.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\c++.exe   -fansi-escape-codes -fcolor-diagnostics   -v -MD -MT CMakeFiles/cmTC_ead03.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_ead03.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles\\cmTC_ead03.dir\\CMakeCXXCompilerABI.cpp.obj -c "E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"]
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
         ignore line: [clang version 18.1.8 (https://github.com/llvm/llvm-project.git 3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff)]
         ignore line: [Target: x86_64-w64-windows-gnu]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: E:/llvm-mingw-20240619-msvcrt-x86_64/bin]
         ignore line: [ (in-process)]
+<<<<<<< HEAD
         ignore line: [ "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/clang-18.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb "-fdebug-compilation-dir=C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ck89bp" -v "-fcoverage-compilation-dir=C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ck89bp" -resource-dir E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18 -dependency-file "CMakeFiles\\\\cmTC_570dc.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_570dc.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include/c++/v1 -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/include/c++/v1 -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/usr/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/include -fdeprecated-macro -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -exception-model=seh -fcolor-diagnostics -fansi-escape-codes -faddrsig -o "CMakeFiles\\\\cmTC_570dc.dir\\\\CMakeCXXCompilerABI.cpp.obj" -x c++ "E:\\\\CLion 2024.2.0.1\\\\bin\\\\cmake\\\\win\\\\x64\\\\share\\\\cmake-3.29\\\\Modules\\\\CMakeCXXCompilerABI.cpp"]
+=======
+        ignore line: [ "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/clang-18.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb "-fdebug-compilation-dir=C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-i22qz3" -v "-fcoverage-compilation-dir=C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-i22qz3" -resource-dir E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18 -dependency-file "CMakeFiles\\\\cmTC_ead03.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_ead03.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include/c++/v1 -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/include/c++/v1 -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/usr/include -internal-isystem E:/llvm-mingw-20240619-msvcrt-x86_64/include -fdeprecated-macro -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -exception-model=seh -fcolor-diagnostics -fansi-escape-codes -faddrsig -o "CMakeFiles\\\\cmTC_ead03.dir\\\\CMakeCXXCompilerABI.cpp.obj" -x c++ "E:\\\\CLion 2024.2.0.1\\\\bin\\\\cmake\\\\win\\\\x64\\\\share\\\\cmake-3.29\\\\Modules\\\\CMakeCXXCompilerABI.cpp"]
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
         ignore line: [clang -cc1 version 18.1.8 based upon LLVM 18.1.8 default target x86_64-w64-mingw32]
         ignore line: [ignoring nonexistent directory "E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include/c++/v1"]
         ignore line: [ignoring nonexistent directory "E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/include"]
@@ -342,22 +459,38 @@ events:
         ignore line: [ E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/include]
         ignore line: [ E:/llvm-mingw-20240619-msvcrt-x86_64/include]
         ignore line: [End of search list.]
+<<<<<<< HEAD
         ignore line: [Linking CXX executable cmTC_570dc.exe]
         ignore line: ["E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_570dc.dir\\link.txt --verbose=1]
         ignore line: ["E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_570dc.dir/objects.a]
         ignore line: [E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_570dc.dir/objects.a @CMakeFiles\\cmTC_570dc.dir\\objects1.rsp]
         ignore line: [E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\c++.exe  -v -Wl -v -Wl --whole-archive CMakeFiles\\cmTC_570dc.dir/objects.a -Wl --no-whole-archive -o cmTC_570dc.exe -Wl --out-implib libcmTC_570dc.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+=======
+        ignore line: [Linking CXX executable cmTC_ead03.exe]
+        ignore line: ["E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_ead03.dir\\link.txt --verbose=1]
+        ignore line: ["E:\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_ead03.dir/objects.a]
+        ignore line: [E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_ead03.dir/objects.a @CMakeFiles\\cmTC_ead03.dir\\objects1.rsp]
+        ignore line: [E:\\llvm-mingw-20240619-msvcrt-x86_64\\bin\\c++.exe  -v -Wl -v -Wl --whole-archive CMakeFiles\\cmTC_ead03.dir/objects.a -Wl --no-whole-archive -o cmTC_ead03.exe -Wl --out-implib libcmTC_ead03.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
         ignore line: [clang version 18.1.8 (https://github.com/llvm/llvm-project.git 3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff)]
         ignore line: [Target: x86_64-w64-windows-gnu]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: E:/llvm-mingw-20240619-msvcrt-x86_64/bin]
+<<<<<<< HEAD
         link line: [ "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_570dc.exe E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crt2.o E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtbegin.o -LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/mingw/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows -v --whole-archive "CMakeFiles\\\\cmTC_570dc.dir/objects.a" --no-whole-archive --out-implib libcmTC_570dc.dll.a --major-image-version 0 --minor-image-version 0 -lc++ -lmingw32 E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtend.o]
+=======
+        link line: [ "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_ead03.exe E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crt2.o E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtbegin.o -LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/mingw/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/lib -LE:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows -v --whole-archive "CMakeFiles\\\\cmTC_ead03.dir/objects.a" --no-whole-archive --out-implib libcmTC_ead03.dll.a --major-image-version 0 --minor-image-version 0 -lc++ -lmingw32 E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtend.o]
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
           arg [E:/llvm-mingw-20240619-msvcrt-x86_64/bin/ld.lld] ==> ignore
           arg [-m] ==> ignore
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
+<<<<<<< HEAD
           arg [cmTC_570dc.exe] ==> ignore
+=======
+          arg [cmTC_ead03.exe] ==> ignore
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
           arg [E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crt2.o] ==> obj [E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crt2.o]
           arg [E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtbegin.o] ==> obj [E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib/crtbegin.o]
           arg [-LE:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib] ==> dir [E:/llvm-mingw-20240619-msvcrt-x86_64/x86_64-w64-mingw32/lib]
@@ -366,10 +499,17 @@ events:
           arg [-LE:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows] ==> dir [E:/llvm-mingw-20240619-msvcrt-x86_64/lib/clang/18/lib/windows]
           arg [-v] ==> ignore
           arg [--whole-archive] ==> ignore
+<<<<<<< HEAD
           arg [CMakeFiles\\\\cmTC_570dc.dir/objects.a] ==> ignore
           arg [--no-whole-archive] ==> ignore
           arg [--out-implib] ==> ignore
           arg [libcmTC_570dc.dll.a] ==> ignore
+=======
+          arg [CMakeFiles\\\\cmTC_ead03.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_ead03.dll.a] ==> ignore
+>>>>>>> 338b3b3fb54bdfa3e54f744d70244e42f562b6db
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
