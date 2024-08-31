@@ -55,6 +55,22 @@ void Graph::weightaddEdge(int vertex1, int vertex2, double weight) {    //sun A*
     weightadjList[vertex2].push_back({vertex1, weight}); // 无向图
 }
 
+void Graph::addEdge_directed(int vertex1, int vertex2) {
+    adjList[vertex1].push_back(vertex2);
+    adjMatrix[vertex1][vertex2] = 1;
+    edgeList.emplace_back(vertex1, vertex2);
+}
+
+void Graph::addEdge_undirected(int vertex1, int vertex2) {
+    adjList[vertex1].push_back(vertex2);
+    adjList[vertex2].push_back(vertex1); // 无向图
+
+    adjMatrix[vertex1][vertex2] = 1;
+    adjMatrix[vertex2][vertex1] = 1; // 无向图
+
+    edgeList.emplace_back(vertex1, vertex2);
+}
+
 const std::vector<std::pair<int, double>>& Graph::getNeighbors(int vertex) const {   //sun A*
     return weightadjList[vertex];
 }
@@ -148,4 +164,19 @@ Graph Graph::generateTransposedGraph() const {
 
 const std::vector<std::vector<int>>& Graph::getWeightadjEdgeList() const { //liujun
     return weightadjEdgeList;
+}
+
+// 构造二分图的函数实现
+Graph Graph::constructBipartiteGraph() const {
+    Graph bipartiteGraph(2 * size);
+
+    for (int u = 0; u < size; ++u) {
+        if (adjList.find(u) == adjList.end()) continue;  // 确保 u 有邻居
+
+        for (int v : adjList.at(u)) {
+            bipartiteGraph.addEdge_directed(u, size + v);
+        }
+    }
+
+    return bipartiteGraph;
 }

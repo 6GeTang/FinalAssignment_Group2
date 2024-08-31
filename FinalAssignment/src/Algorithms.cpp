@@ -942,3 +942,318 @@ std::pair<int, int> dmst(const Graph& graph) {    //liujun
 
     return std::make_pair(resultVectex, minCutWeight);
 }
+
+//tg
+// 欧拉路径与欧拉回路
+bool isEulerian(const Graph& graph, bool isDirected, int& type) {
+    if (isDirected) {
+        // 对有向图的处理
+        std::vector<int> inDegree(graph.getSize(), 0);
+        std::vector<int> outDegree(graph.getSize(), 0);
+
+        for (int u = 0; u < graph.getSize(); ++u) {
+            for (int v : graph.getAdjList().at(u)) {
+                outDegree[u]++;
+                inDegree[v]++;
+            }
+        }
+
+        int oddIn = 0, oddOut = 0;
+        for (int i = 0; i < graph.getSize(); ++i) {
+            if (outDegree[i] - inDegree[i] == 1) oddOut++;
+            else if (inDegree[i] - outDegree[i] == 1) oddIn++;
+            else if (inDegree[i] != outDegree[i]) {
+                type = 0;  // 无欧拉路径或回路
+                return false;
+            }
+        }
+
+        if (oddIn == 0 && oddOut == 0) {
+            type = 2;  // 存在欧拉回路
+            return true;
+        }
+        if (oddIn == 1 && oddOut == 1) {
+            type = 1;  // 存在欧拉路径但不存在欧拉回路
+            return true;
+        }
+        type = 0;
+        return false;
+    } else {
+        // 对无向图的处理
+        int odd = 0;
+        for (const auto& pair : graph.getAdjList()) {
+            if (pair.second.size() % 2 != 0) {
+                odd++;
+            }
+        }
+
+        if (odd == 0) {
+            type = 2;  // 存在欧拉回路
+            return true;
+        } else if (odd == 2) {
+            type = 1;  // 存在欧拉路径但不存在欧拉回路
+            return true;
+        } else {
+            type = 0;  // 无欧拉路径或回路
+            return false;
+        }
+    }
+}
+
+std::pair<int, std::vector<int>> findEulerianPathOrCircuit(Graph& graph, bool isDirected) {
+    std::vector<int> path;
+    int type = 0;
+    if (!isEulerian(graph, isDirected, type)) {
+        return {type, path}; // 返回空路径，表示没有欧拉路径或回路
+    }
+
+    std::stack<int> stack;
+    std::vector<std::vector<int>> adjMatrix = graph.getAdjMatrix();
+    int curr = 0;
+
+    // 寻找起始节点（针对欧拉路径的情况）
+    if (isDirected) {
+        std::vector<int> inDegree(graph.getSize(), 0);
+        std::vector<int> outDegree(graph.getSize(), 0);
+
+        for (int u = 0; u < graph.getSize(); ++u) {
+            for (int v : graph.getAdjList().at(u)) {
+                outDegree[u]++;
+                inDegree[v]++;
+            }
+        }
+
+        for (int i = 0; i < graph.getSize(); ++i) {
+            if (outDegree[i] - inDegree[i] == 1) {
+                curr = i; // 从出度比入度多1的节点开始
+                break;
+            }
+        }
+    } else {
+        for (int i = 0; i < graph.getSize(); ++i) {
+            if (graph.getAdjList().at(i).size() % 2 != 0) {
+                curr = i; // 从一个度数为奇数的节点开始
+                break;
+            }
+        }
+    }
+
+    stack.push(curr);
+
+    while (!stack.empty()) {
+        int v = curr;
+        if (std::count(adjMatrix[v].begin(), adjMatrix[v].end(), 1) == 0) {
+            path.push_back(v);
+            curr = stack.top();
+            stack.pop();
+        } else {
+            for (int i = 0; i < graph.getSize(); ++i) {
+                if (adjMatrix[v][i] == 1) {
+                    stack.push(v);
+                    adjMatrix[v][i] = 0;
+                    if (!isDirected) {
+                        adjMatrix[i][v] = 0; // 对无向图，双向移除
+                    }
+                    curr = i;
+                    break;
+                }
+            }
+        }
+    }
+
+    std::reverse(path.begin(), path.end());
+    return {type, path};  // 返回路径和类型
+}
+
+
+// 哈密顿路径与哈密顿回路
+bool isHamiltonianUtil(const Graph& graph, std::vector<int>& path, std::vector<bool>& visited, int pos, bool isDirected, bool findCircuit) {
+    if (pos == graph.getSize()) {
+        if (findCircuit) {
+            // 寻找哈密顿回路：检查是否能回到起点
+            if (!isDirected) {
+                if (std::find(graph.getAdjList().at(path[pos - 1]).begin(), graph.getAdjList().at(path[pos - 1]).end(), path[0]) != graph.getAdjList().at(path[pos - 1]).end()) {
+                    path.push_back(path[0]);
+                    return true;
+                }
+            } else {
+                for (int neighbor : graph.getAdjList().at(path[pos - 1])) {
+                    if (neighbor == path[0]) {
+                        path.push_back(path[0]);
+                        return true;
+                    }
+                }
+            }
+            return false;
+        } else {
+            // 寻找哈密顿路径：路径已构建完毕
+            return true;
+        }
+    }
+
+    for (int v = 0; v < graph.getSize(); ++v) {
+        if (!visited[v] && std::find(graph.getAdjList().at(path[pos - 1]).begin(), graph.getAdjList().at(path[pos - 1]).end(), v) != graph.getAdjList().at(path[pos - 1]).end()) {
+            path[pos] = v;
+            visited[v] = true;
+
+            if (isHamiltonianUtil(graph, path, visited, pos + 1, isDirected, findCircuit)) {
+                return true;
+            }
+
+            visited[v] = false;
+        }
+    }
+
+    return false;
+}
+
+std::vector<int> findHamiltonianPathOrCircuit(const Graph& graph, bool isDirected, bool findCircuit) {
+    for (int startVertex = 0; startVertex < graph.getSize(); ++startVertex) {
+        std::vector<int> path(graph.getSize(), -1);
+        std::vector<bool> visited(graph.getSize(), false);
+
+        path[0] = startVertex; // 从当前顶点开始
+        visited[startVertex] = true;
+
+        if (isHamiltonianUtil(graph, path, visited, 1, isDirected, findCircuit)) {
+            return path;
+        }
+    }
+
+    return {}; // 无哈密顿路径或回路
+}
+
+
+// 树的前序遍历（Preorder Traversal）
+void preorderTraversalUtil(const Graph& graph, int vertex, std::vector<bool>& visited) {
+    visited[vertex] = true;
+    std::cout << vertex << " ";
+
+    for (int neighbor : graph.getAdjList().at(vertex)) {
+        if (!visited[neighbor]) {
+            preorderTraversalUtil(graph, neighbor, visited);
+        }
+    }
+}
+
+void preorderTraversal(const Graph& graph, int startVertex) {
+    std::vector<bool> visited(graph.getSize(), false);
+    preorderTraversalUtil(graph, startVertex, visited);
+    std::cout << std::endl;
+}
+
+// 树的中序遍历（Inorder Traversal）
+void inorderTraversalUtil(const Graph& graph, int vertex, std::vector<bool>& visited) {
+    visited[vertex] = true; // 标记当前节点为已访问
+    auto neighbors = graph.getAdjList().at(vertex);
+
+    // 处理左子树（假设第一个邻居是左子树）
+    if (!neighbors.empty() && !visited[neighbors[0]]) {
+        inorderTraversalUtil(graph, neighbors[0], visited);
+    }
+
+    // 访问当前节点
+    std::cout << vertex << " ";
+
+    // 处理右子树（假设第二个邻居是右子树）
+    if (neighbors.size() > 1 && !visited[neighbors[1]]) {
+        inorderTraversalUtil(graph, neighbors[1], visited);
+    }
+}
+
+void inorderTraversal(const Graph& graph, int startVertex) {
+    std::vector<bool> visited(graph.getSize(), false); // 初始化访问标志
+    inorderTraversalUtil(graph, startVertex, visited); // 开始递归
+    std::cout << std::endl;
+}
+
+
+
+// 树的后序遍历（Postorder Traversal）
+void postorderTraversalUtil(const Graph& graph, int vertex, std::vector<bool>& visited) {
+    visited[vertex] = true;
+
+    for (int neighbor : graph.getAdjList().at(vertex)) {
+        if (!visited[neighbor]) {
+            postorderTraversalUtil(graph, neighbor, visited);
+        }
+    }
+
+    std::cout << vertex << " ";
+}
+
+void postorderTraversal(const Graph& graph, int startVertex) {
+    std::vector<bool> visited(graph.getSize(), false);
+    postorderTraversalUtil(graph, startVertex, visited);
+    std::cout << std::endl;
+}
+
+// 树的层序遍历（Level Order Traversal）
+void levelOrderTraversal(const Graph& graph, int startVertex) {
+    std::vector<bool> visited(graph.getSize(), false);
+    std::queue<int> queue;
+
+    visited[startVertex] = true;
+    queue.push(startVertex);
+
+    while (!queue.empty()) {
+        int vertex = queue.front();
+        std::cout << vertex << " ";
+        queue.pop();
+
+        for (int neighbor : graph.getAdjList().at(vertex)) {
+            if (!visited[neighbor]) {
+                visited[neighbor] = true;
+                queue.push(neighbor);
+            }
+        }
+    }
+
+    std::cout << std::endl;
+}
+
+
+// 匈牙利算法实现最大匹配
+bool bpm(const Graph& bipartiteGraph, int u, std::vector<bool>& visited, std::vector<int>& matchR) {
+    int n = bipartiteGraph.getSize() / 2;
+
+    if (bipartiteGraph.getAdjList().find(u) == bipartiteGraph.getAdjList().end()) {
+        return false;  // 如果 u 没有邻居，直接返回 false
+    }
+
+    for (int v : bipartiteGraph.getAdjList().at(u)) {
+        v -= n;  // Adjust index for the second partition
+        if (!visited[v]) {
+            visited[v] = true;
+            if (matchR[v] < 0 || bpm(bipartiteGraph, matchR[v], visited, matchR)) {
+                matchR[v] = u;
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+
+// 计算最大匹配
+int maxBipartiteMatching(const Graph& bipartiteGraph) {
+    int n = bipartiteGraph.getSize() / 2;
+    std::vector<int> matchR(n, -1);  // Match array for second partition
+
+    int result = 0;
+    for (int u = 0; u < n; ++u) {
+        std::vector<bool> visited(n, false);
+        if (bpm(bipartiteGraph, u, visited, matchR)) {
+            result++;
+        }
+    }
+    return result;
+}
+
+// 计算最小路径覆盖
+int minPathCover(const Graph& graph) {
+    Graph bipartiteGraph = graph.constructBipartiteGraph();
+    int maxMatching = maxBipartiteMatching(bipartiteGraph);
+    return graph.getSize() - maxMatching;
+}
+//tg end

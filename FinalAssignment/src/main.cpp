@@ -335,5 +335,189 @@ int main() {
     // }
 
 
+//    //tg test start
+//    // 创建一个更复杂的无向图
+//    Graph undirectedGraph(7);
+//    undirectedGraph.addVertex(0);
+//    undirectedGraph.addVertex(1);
+//    undirectedGraph.addVertex(2);
+//    undirectedGraph.addVertex(3);
+//    undirectedGraph.addVertex(4);
+//    undirectedGraph.addVertex(5);
+//    undirectedGraph.addVertex(6);
+//
+//    // 构造无向图的边（多个环和附加边）
+//    undirectedGraph.addEdge_undirected(0, 1);
+//    undirectedGraph.addEdge_undirected(1, 2);
+//    undirectedGraph.addEdge_undirected(2, 3);
+//    undirectedGraph.addEdge_undirected(3, 4);
+//    undirectedGraph.addEdge_undirected(4, 5);
+//    undirectedGraph.addEdge_undirected(5, 6);
+//    undirectedGraph.addEdge_undirected(6, 0); // 大环
+//    undirectedGraph.addEdge_undirected(0, 3); // 附加边
+//    undirectedGraph.addEdge_undirected(1, 4); // 附加边
+//    undirectedGraph.addEdge_undirected(2, 5); // 附加边
+//
+//    //测试欧拉路径和欧拉回路-无向图
+//    std::cout << "Undirected Graph:" << std::endl;
+//    auto result1 = findEulerianPathOrCircuit(undirectedGraph, false);
+//    if (result1.first == 2) {
+//        std::cout << "Eulerian Circuit found: ";
+//    } else if (result1.first == 1) {
+//        std::cout << "Eulerian Path found: ";
+//    } else {
+//        std::cout << "No Eulerian Path or Circuit found.";
+//    }
+//    for (int vertex : result1.second) {
+//        std::cout << vertex << " ";
+//    }
+//    std::cout << std::endl;
+//
+//
+//    //测试哈密顿路径-无向图
+//    std::vector<int> hamiltonianPathUndirected = findHamiltonianPathOrCircuit(undirectedGraph, false, false);
+//    if (!hamiltonianPathUndirected.empty()) {
+//        std::cout << "Hamiltonian Path: ";
+//        for (int vertex : hamiltonianPathUndirected) {
+//            std::cout << vertex << " ";
+//        }
+//        std::cout<<std::endl;
+//    } else {
+//        std::cout << "No Hamiltonian Path found in the undirected graph." <<std::endl;
+//    }
+//
+//    //测试哈密顿回路-无向图
+//    std::vector<int> hamiltonianCircuitUndirected = findHamiltonianPathOrCircuit(undirectedGraph, false, true);
+//    if (!hamiltonianCircuitUndirected.empty()) {
+//        std::cout << "Hamiltonian Circuit: ";
+//        for (int vertex : hamiltonianCircuitUndirected) {
+//            std::cout << vertex << " ";
+//        }
+//        std::cout<<std::endl;
+//    } else {
+//        std::cout << "No Hamiltonian Circuit found in the undirected graph."<<std::endl;
+//    }
+//
+//    std::cout<<std::endl;
+//
+//
+//
+//    // 创建一个更复杂的有向图
+//    Graph directedGraph(7);
+//    directedGraph.addVertex(0);
+//    directedGraph.addVertex(1);
+//    directedGraph.addVertex(2);
+//    directedGraph.addVertex(3);
+//    directedGraph.addVertex(4);
+//    directedGraph.addVertex(5);
+//    directedGraph.addVertex(6);
+//
+//    // 构造有向图的边（形成一个复杂的路径和环）
+//    directedGraph.addEdge_directed(0, 1);
+//    directedGraph.addEdge_directed(1, 2);
+//    directedGraph.addEdge_directed(2, 3);
+//    directedGraph.addEdge_directed(3, 4);
+//    directedGraph.addEdge_directed(4, 5);
+//    directedGraph.addEdge_directed(5, 6);
+//    directedGraph.addEdge_directed(6, 0); // 大环
+//    directedGraph.addEdge_directed(0, 3); // 附加边
+//    directedGraph.addEdge_directed(1, 4); // 附加边
+//    directedGraph.addEdge_directed(2, 5); // 附加边
+//
+//    //测试欧拉路径和欧拉回路-有向图
+//    std::cout << "Directed Graph:" << std::endl;
+//    auto result3 = findEulerianPathOrCircuit(directedGraph, true);
+//    if (result3.first == 2) {
+//        std::cout << "Eulerian Circuit found: ";
+//    } else if (result3.first == 1) {
+//        std::cout << "Eulerian Path found: ";
+//    } else {
+//        std::cout << "No Eulerian Path or Circuit found.";
+//    }
+//    for (int vertex : result3.second) {
+//        std::cout << vertex << " ";
+//    }
+//    std::cout << std::endl;
+//
+//    //测试哈密顿回路-有向图
+//    std::vector<int> hamiltonianPathDirected = findHamiltonianPathOrCircuit(directedGraph, true, false);
+//    if (!hamiltonianPathDirected.empty()) {
+//        std::cout << "Hamiltonian Path: ";
+//        for (int vertex : hamiltonianPathDirected) {
+//            std::cout << vertex << " ";
+//        }
+//        std::cout<<std::endl;
+//    } else {
+//        std::cout << "No Hamiltonian Path found in the directed graph."<<std::endl;
+//    }
+//
+//    //测试哈密顿回路-有向图
+//    std::vector<int> hamiltonianCircuitDirected = findHamiltonianPathOrCircuit(directedGraph, true, true);
+//    if (!hamiltonianCircuitDirected.empty()) {
+//        std::cout << "Hamiltonian Circuit: ";
+//        for (int vertex : hamiltonianCircuitDirected) {
+//            std::cout << vertex << " ";
+//        }
+//        std::cout<<std::endl;
+//    } else {
+//        std::cout << "No Hamiltonian Circuit found in the directed graph."<<std::endl;
+//    }
+//
+//
+//    std::cout << std::endl;
+//    //测试树的遍历
+//    Graph tree(7);
+//    tree.addVertex(0);
+//    tree.addVertex(1);
+//    tree.addVertex(2);
+//    tree.addVertex(3);
+//    tree.addVertex(4);
+//    tree.addVertex(5);
+//    tree.addVertex(6);
+//
+//    tree.addEdge_directed(0, 1); // 左子树
+//    tree.addEdge_directed(0, 2); // 右子树
+//    tree.addEdge_directed(1, 3); // 左子树的左子树
+//    tree.addEdge_directed(1, 4); // 左子树的右子树
+//    tree.addEdge_directed(2, 5); // 右子树的左子树
+//    tree.addEdge_directed(2, 6); // 右子树的右子树
+//    //测试前序遍历
+//    std::cout << "Preorder Traversal of the tree starting from vertex 0:" ;
+//    preorderTraversal(tree, 0);
+//    //测试中序遍历
+//    std::cout << "Inorder Traversal of the tree starting from vertex 0:" ;
+//    inorderTraversal(tree, 0);
+//    //测试后序遍历
+//    std::cout << "Postorder Traversal of the tree starting from vertex 0:" ;
+//    postorderTraversal(tree, 0);
+//    //测试层序遍历
+//    std::cout << "LevelOrder Traversal of the tree starting from vertex 0:" ;
+//    levelOrderTraversal(tree, 0);
+//
+//
+//    std::cout << std::endl;
+//    // 创建有向图
+//    Graph graph(4);
+//
+//    graph.addVertex(0);
+//    graph.addVertex(1);
+//    graph.addVertex(2);
+//    graph.addVertex(3);
+//
+//    graph.addEdge_directed(0, 1);
+//    graph.addEdge_directed(1, 2);
+//    graph.addEdge_directed(2, 3);
+//
+//    // 测试最大匹配和最小路径覆盖
+//    int maxMatching = maxBipartiteMatching(graph.constructBipartiteGraph());
+//    std::cout << "Maximum Bipartite Matching: " << maxMatching << std::endl;
+//
+//    int minCover = minPathCover(graph);
+//    std::cout << "Minimum Path Cover: " << minCover << std::endl;
+//
+//
+//    //tg test end
+
+
     return 0;
 }

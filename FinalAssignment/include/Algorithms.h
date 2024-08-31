@@ -74,4 +74,26 @@ std::vector<int> spfa(const Graph& graph, int source);
 
 //lzy部分-后
 
+//tg
+// 欧拉路径与欧拉回路
+bool isEulerian(const Graph& graph, bool isDirected, int& type);
+std::pair<int, std::vector<int>> findEulerianPathOrCircuit(Graph& graph, bool isDirected);
+
+// 哈密顿路径与哈密顿回路
+std::vector<int> findHamiltonianPathOrCircuit(const Graph& graph, bool isDirected, bool findCircuit);
+bool isHamiltonianUtil(const Graph& graph, std::vector<int>& path, std::vector<bool>& visited, int pos, bool isDirected, bool findCircuit);
+
+// 树的遍历
+void preorderTraversal(const Graph& graph, int startVertex);
+void inorderTraversal(const Graph& graph, int startVertex);
+void postorderTraversal(const Graph& graph, int startVertex);
+void levelOrderTraversal(const Graph& graph, int startVertex);
+
+bool bpm(const Graph& bipartiteGraph, int u, std::vector<bool>& visited, std::vector<int>& matchR);
+int maxBipartiteMatching(const Graph& bipartiteGraph);
+// 最小路径覆盖
+int minPathCover(const Graph& graph);
+
+//tg end
+
 #endif //FINALASSIGNMENT_ALGORITHMS_H

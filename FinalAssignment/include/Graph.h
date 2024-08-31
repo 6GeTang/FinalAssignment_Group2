@@ -30,6 +30,8 @@ public:
     void weightAddEdge(int vertex1, int vertex2, int weight); // liujun
     void addEdge1(int vertex1, int vertex2, int value);//lzy
     void addEdge2(int vertex1, int vertex2, int value);//lzy
+    void addEdge_directed(int vertex1, int vertex2);//tg
+    void addEdge_undirected(int vertex1, int vertex2);//tg
 
     void weightaddEdge(int vertex1, int vertex2, double weight);  //sun
     const std::vector<std::pair<int, double>>& getNeighbors(int vertex) const;  //sun
@@ -45,6 +47,9 @@ public:
     const std::vector<std::vector<int>>& getWeightadjEdgeList() const; // liujun
 
     int getSize() const;
+
+    // 为最小路径覆盖添加的函数声明
+    Graph constructBipartiteGraph() const;
 
 private:
     std::map<int, std::vector<int>> adjList;

@@ -45,14 +45,17 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++17 -fdiagnostics-color=always"
+					"fragment" : "-g"
+				},
+				{
+					"fragment" : "-std=gnu++17"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 2,
-					"path" : "D:/1learn/Git/liujun/FinalAssignment_Group2/FinalAssignment/include"
+					"path" : "C:/Users/lenovo/Desktop/tg/FinalAssignment_Group2/FinalAssignment/include"
 				}
 			],
 			"language" : "CXX",
