@@ -159,5 +159,57 @@ int main() {
 //        std::cout << edge.u << " -> " << edge.v << " (Weight: " << edge.weight << ")" << std::endl;
 //    }
 
+//lzy部分-前
+    // 测试 Floyd
+//    Graph g(5);
+//    g.addEdge1(0, 1, 3);
+//    g.addEdge1(0, 4, 5);
+//    g.addEdge1(1, 2, 1);
+//    g.addEdge1(1, 3, 2);
+//    g.addEdge1(2, 3, 4);
+//    g.addEdge1(3, 4, 2);
+//
+//    floydWarshall(g);
+
+    //测试 Bellman-Ford算法
+//    Graph g(4);
+//    g.addEdge1(0,1,-1);
+//    g.addEdge1(0,2,4);
+//    g.addEdge1(1,2,5);
+//    g.addEdge1(1,3,2);
+//    g.addEdge1(2,3,1);
+//
+//    bellmanFord(g, 0);
+    //测试johnson算法
+//    Graph graph(5);
+//    graph.addEdge1(0, 1, 3);
+//    graph.addEdge1(0, 2, 8);
+//    graph.addEdge1(1, 2, 1);
+//    graph.addEdge1(1, 3, 7);
+//    graph.addEdge1(2, 4, 2);
+//    graph.addEdge1(3, 4, 9);
+//
+//    johnson(graph);
+    //测试SPFA算法
+//    Graph graph(5);
+//    graph.addEdge1(0, 1, 3);
+//    graph.addEdge1(0, 2, 8);
+//    graph.addEdge1(1, 2, 1);
+//    graph.addEdge1(1, 3, 7);
+//    graph.addEdge1(2, 4, 2);
+//    graph.addEdge1(3, 4, 9);
+//
+//    int source = 0;
+//    std::vector<int> distances = spfa(graph, source);
+//
+//    std::cout << "Shortest distances from vertex " << source << " using SPFA:" << std::endl;
+//    for (int i = 0; i < graph.getSize(); ++i) {
+//        if (distances[i] == INT_MAX) {
+//            std::cout << "No path from " << source << " to " << i << std::endl;
+//        } else {
+//            std::cout << "Distance from " << source << " to " << i << ": " << distances[i] << std::endl;
+//        }
+//    }
+    //lzy部分-后
     return 0;
 }

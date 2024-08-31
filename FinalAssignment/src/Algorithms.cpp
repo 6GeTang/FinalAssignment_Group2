@@ -307,3 +307,232 @@ int edmondsMST(int root, int V, std::vector<Edge>& edges, std::vector<Edge>& mst
     // Step 5: 还原环中的边
     return cycleMSTWeight + accumulate(cycleWeight.begin(), cycleWeight.end(), 0);
 }
+
+//lzy部分-前
+// 实现 Floyd-Warshall 算法
+void floydWarshall(const Graph& graph) {
+    int size = graph.getSize();
+    const std::vector<std::vector<int>>& adjMatrix = graph.getAdjMatrix();
+    std::vector<std::vector<int>> dist(size, std::vector<int>(size, INT_MAX));
+
+    // 初始化距离矩阵
+    for (int i = 0; i < size; ++i) {
+        for (int j = 0; j < size; ++j) {
+            if (i == j) {
+                dist[i][j] = 0;
+            } else if (adjMatrix[i][j]!= 0) {
+                dist[i][j] = adjMatrix[i][j];
+            }
+        }
+    }
+
+    // Floyd-Warshall 算法核心部分
+    for (int k = 0; k < size; ++k) {
+        for (int i = 0; i < size; ++i) {
+            for (int j = 0; j < size; ++j) {
+                if (dist[i][k]!= INT_MAX && dist[k][j]!= INT_MAX && dist[i][k] + dist[k][j] < dist[i][j]) {
+                    dist[i][j] = dist[i][k] + dist[k][j];
+                }
+            }
+        }
+    }
+
+    // 输出最短路径距离矩阵
+    std::cout << "Shortest path distances:\n";
+    for (int i = 0; i < size; ++i) {
+        for (int j = 0; j < size; ++j) {
+            if (dist[i][j] == INT_MAX) {
+                std::cout << "INF ";
+            } else {
+                std::cout << dist[i][j] << " ";
+            }
+        }
+        std::cout << std::endl;
+    }
+}
+
+// Bellman-Ford 算法实现
+// 定义一个结构体来表示边
+//struct Edge {
+//    int source;
+//    int destination;
+//    int weight;
+//};
+void bellmanFord(const Graph& graph, int source) {
+    int size = graph.getSize();
+    std::vector<int> distance(size, INT_MAX);
+    distance[source] = 0;
+
+    // 松弛操作
+    for (int i = 0; i < size - 1; i++) {
+        for (const auto& edge : graph.getEdgeList()) {
+            int u = edge.first;
+            int v = edge.second;
+            int weight = graph.getAdjMatrix()[u][v];
+            if (distance[u]!= INT_MAX && distance[u] + weight < distance[v]) {
+                distance[v] = distance[u] + weight;
+            }
+        }
+    }
+
+    // 检查负权回路
+    for (const auto& edge : graph.getEdgeList()) {
+        int u = edge.first;
+        int v = edge.second;
+        int weight = graph.getAdjMatrix()[u][v];
+        if (distance[u]!= INT_MAX && distance[u] + weight < distance[v]) {
+            std::cout << "there is a negative weight loop" << std::endl;
+            return;
+        }
+    }
+
+    // 输出从源点到各个顶点的最短距离
+    std::cout << "from " << source << " : " << std::endl;
+    for (int i = 0; i < size; i++) {
+        if (distance[i] == INT_MAX) {
+            std::cout << "to " << i << " : inaccessible" << std::endl;
+        } else {
+            std::cout << "to " << i << " : " << distance[i] << std::endl;
+        }
+    }
+}
+
+// Johnson算法:高效求解多源最短路径问题（利用Dijkstra算法和Bellman-ford算法作为子程序实现的）
+// 使用 Bellman-Ford2 算法计算单源最短路径
+std::vector<int> bellmanFord2(const Graph& graph, int source) {
+    int size = graph.getSize();
+    std::vector<int> distance(size, INT_MAX);
+    distance[source] = 0;
+
+    for (int i = 0; i < size - 1; ++i) {
+        for (const auto& edge : graph.getEdgeList()) {
+            int u = edge.first;
+            int v = edge.second;
+            int weight = graph.getAdjMatrix()[u][v];
+            if (distance[u]!= INT_MAX && distance[u] + weight < distance[v]) {
+                distance[v] = distance[u] + weight;
+            }
+        }
+    }
+
+    // 检查负权回路
+    for (const auto& edge : graph.getEdgeList()) {
+        int u = edge.first;
+        int v = edge.second;
+        int weight = graph.getAdjMatrix()[u][v];
+        if (distance[u]!= INT_MAX && distance[u] + weight < distance[v]) {
+            std::cerr << "Graph contains negative-weight cycle." << std::endl;
+            return std::vector<int>();
+        }
+    }
+
+    return distance;
+}
+// 使用 Dijkstra2 算法计算单源最短路径
+std::vector<int> dijkstra2(const Graph& graph, int source, const std::vector<int>& potential) {
+    int size = graph.getSize();
+    std::vector<int> distance(size, INT_MAX);
+    distance[source] = 0;
+
+    std::vector<bool> visited(size, false);
+
+    for (int count = 0; count < size - 1; ++count) {
+        int minDistance = INT_MAX;
+        int minVertex = -1;
+
+        for (int v = 0; v < size; ++v) {
+            if (!visited[v] && distance[v] < minDistance) {
+                minDistance = distance[v];
+                minVertex = v;
+            }
+        }
+
+        if (minVertex == -1) {
+            break;
+        }
+
+        visited[minVertex] = true;
+
+        for (int v = 0; v < size; ++v) {
+            int weight = graph.getAdjMatrix()[minVertex][v];
+            if (weight!= INT_MAX && distance[minVertex]!= INT_MAX && distance[minVertex] + weight + potential[minVertex] - potential[v] < distance[v]) {
+                distance[v] = distance[minVertex] + weight + potential[minVertex] - potential[v];
+            }
+        }
+    }
+
+    return distance;
+}
+// Johnson 算法求解多源最短路
+void johnson(const Graph& graph) {
+    int size = graph.getSize();
+    Graph newGraph(size + 1);
+
+    // 添加新的顶点 0 并与其他所有顶点相连，边权为 0
+    for (int i = 0; i < size; ++i) {
+        newGraph.addEdge1(size, i, 0);
+    }
+
+    std::vector<int> h = bellmanFord2(newGraph, size);
+    if (h.empty()) {
+        return;
+    }
+
+    std::vector<std::vector<int>> shortestDistances(size, std::vector<int>(size, INT_MAX));
+
+    for (int source = 0; source < size; ++source) {
+        std::vector<int> potential(size);
+        for (int i = 0; i < size; ++i) {
+            potential[i] = h[i];
+        }
+        std::vector<int> distances = dijkstra2(graph, source, potential);
+        for (int destination = 0; destination < size; ++destination) {
+            shortestDistances[source][destination] = distances[destination];
+        }
+    }
+
+    // 输出结果
+    std::cout << "All-Pairs Shortest Paths using Johnson's algorithm:" << std::endl;
+    for (int i = 0; i < size; ++i) {
+        for (int j = 0; j < size; ++j) {
+            if (shortestDistances[i][j] == INT_MAX) {
+                std::cout << "No path from " << i << " to " << j << std::endl;
+            } else {
+                std::cout << "Shortest distance from " << i << " to " << j << ": " << shortestDistances[i][j] << std::endl;
+            }
+        }
+    }
+}
+
+// 使用 SPFA 算法求解单源最短路径(Bellman-Ford算法的优化版)
+std::vector<int> spfa(const Graph& graph, int source) {
+    int size = graph.getSize();
+    std::vector<int> distance(size, INT_MAX);
+    distance[source] = 0;
+
+    std::vector<bool> inQueue(size, false);
+    std::queue<int> q;
+    q.push(source);
+    inQueue[source] = true;
+
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        inQueue[u] = false;
+
+        for (int v : graph.getAdjList().at(u)) {
+            int weight = graph.getAdjMatrix()[u][v];
+            if (distance[u]!= INT_MAX && distance[u] + weight < distance[v]) {
+                distance[v] = distance[u] + weight;
+                if (!inQueue[v]) {
+                    q.push(v);
+                    inQueue[v] = true;
+                }
+            }
+        }
+    }
+
+    return distance;
+}
+
+//lzy部分-后

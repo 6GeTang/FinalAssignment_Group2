@@ -22,6 +22,25 @@ void Graph::addEdge(int vertex1, int vertex2) {
 
     edgeList.emplace_back(vertex1, vertex2);
 }
+
+void Graph::addEdge1(int vertex1, int vertex2, int value) {//lzy
+    adjList[vertex1].push_back(vertex2);
+    adjList[vertex2].push_back(vertex1); // 无向图
+
+    adjMatrix[vertex1][vertex2] = value;//lzy
+    adjMatrix[vertex2][vertex1] = value;//lzy
+
+    edgeList.emplace_back(vertex1, vertex2);
+}
+
+void Graph::addEdge2(int vertex1, int vertex2, int value) {//lzy
+    adjList[vertex1].push_back(vertex2); // 只在vertex1的邻接列表中添加vertex2 //lzy
+
+    adjMatrix[vertex1][vertex2] = value; // 只设置从vertex1到vertex2的值 //lzy
+
+    edgeList.emplace_back(vertex1, vertex2); // 添加边到边的列表中，并包含边的值 //lzy
+}
+
 void Graph::weightaddEdge(int vertex1, int vertex2, double weight) {    //sun A*
     weightadjList[vertex1].push_back({vertex2, weight});
     weightadjList[vertex2].push_back({vertex1, weight}); // 无向图

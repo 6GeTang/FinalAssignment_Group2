@@ -16,6 +16,8 @@ public:
 
     void addVertex(int vertex);
     void addEdge(int vertex1, int vertex2);
+    void addEdge1(int vertex1, int vertex2, int value);//lzy
+    void addEdge2(int vertex1, int vertex2, int value);//lzy
 
     void weightaddEdge(int vertex1, int vertex2, double weight);  //sun
     const std::vector<std::pair<int, double>>& getNeighbors(int vertex) const;  //sun
