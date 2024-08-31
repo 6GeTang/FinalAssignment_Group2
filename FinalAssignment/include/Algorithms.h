@@ -39,5 +39,13 @@ void boruvkaMST(int V, int E, std::vector<Edge>& edges); //sun Borůvka算法
 
 int edmondsMST(int root, int V, std::vector<Edge>& edges, std::vector<Edge>& mstEdges); //sun Edmonds算法
 
+//冯碧川的改动开始
+// 深度优先搜索 (DFS)
+void DFS(const Graph& graph, int startVertex, std::vector<bool>& visited);
+
+// 广度优先搜索 (BFS)
+void BFS(const Graph& graph, int startVertex);
+void findArticulationPointsAndBridges(const Graph& graph, std::vector<bool>& isAP, std::vector<std::pair<int, int>>& bridges);
+//冯碧川的改动结束
 
 #endif //FINALASSIGNMENT_ALGORITHMS_H

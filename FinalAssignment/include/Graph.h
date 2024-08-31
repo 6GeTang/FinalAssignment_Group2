@@ -11,6 +11,15 @@
 
 class Graph {
 public:
+
+    //冯碧川在此处改动
+    //为有向图和拓扑排序方法添加声明
+    Graph generateDirectedGraph() const;
+    Graph generateTransposedGraph() const;
+    std::vector<int> topologicalSort() const;
+
+    //冯碧川的改动到此结束
+
     Graph(int size);
     ~Graph();
 

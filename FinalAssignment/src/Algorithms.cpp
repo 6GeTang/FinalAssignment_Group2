@@ -307,3 +307,261 @@ int edmondsMST(int root, int V, std::vector<Edge>& edges, std::vector<Edge>& mst
     // Step 5: 还原环中的边
     return cycleMSTWeight + accumulate(cycleWeight.begin(), cycleWeight.end(), 0);
 }
+
+//冯碧川的改动开始
+//拓扑排序开始 begin:
+// 1.拓扑排序的方法 (基于 Kahn's 算法)
+std::vector<int> topologicalSort(const Graph& graph) {
+    int size = graph.getSize();
+    std::vector<int> inDegree(size, 0);
+    std::vector<int> topoOrder;
+    std::queue<int> zeroInDegreeQueue;
+
+    // 计算每个顶点的入度
+    for (const auto& pair : graph.getAdjList()) {
+        for (int neighbor : pair.second) {
+            inDegree[neighbor]++;
+        }
+    }
+
+    // 将所有入度为0的顶点加入队列
+    for (int i = 0; i < size; ++i) {
+        if (inDegree[i] == 0) {
+            zeroInDegreeQueue.push(i);
+        }
+    }
+
+    // 处理队列中的顶点
+    while (!zeroInDegreeQueue.empty()) {
+        int vertex = zeroInDegreeQueue.front();
+        zeroInDegreeQueue.pop();
+        topoOrder.push_back(vertex);
+
+        // 减少邻居顶点的入度
+        for (int neighbor : graph.getAdjList().at(vertex)) {
+            inDegree[neighbor]--;
+            if (inDegree[neighbor] == 0) {
+                zeroInDegreeQueue.push(neighbor);
+            }
+        }
+    }
+
+    // 检查是否存在环
+    if (topoOrder.size() != size) {
+        throw std::runtime_error("此图中存在环，不可以进行拓扑排序");
+    }
+
+    return topoOrder;
+}
+
+void dfsUtil(int v, const Graph& graph, std::vector<bool>& visited, std::stack<int>& Stack) {
+    visited[v] = true;
+
+    // 遍历所有的邻居
+    for (int neighbor : graph.getAdjList().at(v)) {
+        if (!visited[neighbor]) {
+            dfsUtil(neighbor, graph, visited, Stack);
+        }
+    }
+
+    // 当前顶点访问完毕，压入栈中
+    Stack.push(v);
+}
+// 2.DFS实现拓扑排序
+std::vector<int> topologicalSortDFS(const Graph& graph) {
+    int size = graph.getSize();
+    std::stack<int> Stack;
+    std::vector<bool> visited(size, false);
+
+    // 对所有未访问的节点执行 DFS
+    for (int i = 0; i < size; i++) {
+        if (!visited[i]) {
+            dfsUtil(i, graph, visited, Stack);
+        }
+    }
+
+    // 将栈中的元素弹出，形成拓扑排序
+    std::vector<int> topoOrder;
+    while (!Stack.empty()) {
+        topoOrder.push_back(Stack.top());
+        Stack.pop();
+    }
+
+    // 检查图中是否有环
+    if (topoOrder.size() != size) {
+        throw std::runtime_error("The graph has a cycle, topological sort is not possible.");
+    }
+
+    return topoOrder;
+}
+
+//拓扑排序结束
+
+//Kosaraju算法的实现begin:
+// 第一次DFS，记录顶点的完成顺序
+void fillOrder(const Graph& graph, int v, std::vector<bool>& visited, std::stack<int>& Stack) {
+    visited[v] = true;
+
+    // 访问所有邻居
+    for (int neighbor : graph.getAdjList().at(v)) {
+        if (!visited[neighbor]) {
+            fillOrder(graph, neighbor, visited, Stack);
+        }
+    }
+
+    // 当前顶点完成后压入栈中
+    Stack.push(v);
+}
+
+// 第二次DFS，遍历强连通分量
+void DFSUtil(const Graph& transposedGraph, int v, std::vector<bool>& visited) {
+    visited[v] = true;
+    std::cout << v << " ";
+
+    for (int neighbor : transposedGraph.getAdjList().at(v)) {
+        if (!visited[neighbor]) {
+            DFSUtil(transposedGraph, neighbor, visited);
+        }
+    }
+}
+
+// Kosaraju算法实现
+void Kosaraju(const Graph& graph) {
+    int size = graph.getSize();
+    std::stack<int> Stack;
+    std::vector<bool> visited(size, false);
+
+    // 第一次DFS，按完成时间顺序将顶点放入栈中
+    for (int i = 0; i < size; i++) {
+        if (!visited[i]) {
+            fillOrder(graph, i, visited, Stack);
+        }
+    }
+
+    // 转置图
+    Graph transposedGraph = graph.generateTransposedGraph();  // 请确认这里是生成转置图，而不是简单的有向图
+
+    // 清除访问记录
+    visited.assign(size, false);
+
+    // 处理所有顶点，按栈中顺序
+    std::cout << "强连通分量如下：" << std::endl;
+    while (!Stack.empty()) {
+        int v = Stack.top();
+        Stack.pop();
+        // 在转置图上执行DFS
+        if (!visited[v]) {
+            DFSUtil(transposedGraph, v, visited);
+            std::cout << std::endl;
+        }
+    }
+}
+
+//Kosaraju 算法实现结束 end
+
+//图的割点和桥begin
+
+void findAPandBridgesUtil(const Graph& graph, int u, std::vector<bool>& visited,
+                          std::vector<int>& disc, std::vector<int>& low,
+                          std::vector<int>& parent, std::vector<bool>& isAP,
+                          std::vector<std::pair<int, int>>& bridges, int& time) {
+    int children = 0;
+    visited[u] = true;
+
+    disc[u] = low[u] = ++time;
+
+    for (int v : graph.getAdjList().at(u)) {
+        if (!visited[v]) {
+            children++;
+            parent[v] = u;
+            findAPandBridgesUtil(graph, v, visited, disc, low, parent, isAP, bridges, time);
+
+            // Check if the subtree rooted at v has a connection back to one of ancestors of u
+            low[u] = std::min(low[u], low[v]);
+
+            // (1) u is root and has more than one child in DFS tree
+            if (parent[u] == -1 && children > 1)
+                isAP[u] = true;
+
+            // (2) u is not root and low value of one of its children is more
+            // than discovery value of u
+            if (parent[u] != -1 && low[v] >= disc[u])
+                isAP[u] = true;
+
+            // (3) The condition for bridge
+            if (low[v] > disc[u])
+                bridges.emplace_back(u, v);
+
+        } else if (v != parent[u]) {
+            // Update low[u] for back edge
+            low[u] = std::min(low[u], disc[v]);
+        }
+    }
+}
+
+
+void findArticulationPointsAndBridges(const Graph& graph, std::vector<bool>& isAP, std::vector<std::pair<int, int>>& bridges) {
+    int V = graph.getSize();
+    std::vector<bool> visited(V, false);
+    std::vector<int> disc(V, -1), low(V, -1), parent(V, -1);
+    int time = 0;
+
+    for (int i = 0; i < V; i++) {
+        if (!visited[i]) {
+            findAPandBridgesUtil(graph, i, visited, disc, low, parent, isAP, bridges, time);
+        }
+    }
+}
+
+//图的割点和桥end
+
+
+// 深度优先搜索 (DFS) 实现
+void DFS(const Graph& graph, int startVertex, std::vector<bool>& visited) {
+    std::stack<int> stack;
+    stack.push(startVertex);
+
+    while (!stack.empty()) {
+        int vertex = stack.top();
+        stack.pop();
+
+        if (!visited[vertex]) {
+            std::cout << vertex << " ";
+            visited[vertex] = true;
+        }
+
+        // 为了保证顺序，逆序遍历邻居
+        const auto& neighbors = graph.getAdjList().at(vertex);
+        for (auto it = neighbors.rbegin(); it != neighbors.rend(); ++it) {
+            if (!visited[*it]) {
+                stack.push(*it);
+            }
+        }
+    }
+}
+
+// 广度优先搜索 (BFS) 实现
+void BFS(const Graph& graph, int startVertex) {
+    std::queue<int> queue;
+    std::vector<bool> visited(graph.getSize(), false);
+
+    queue.push(startVertex);
+    visited[startVertex] = true;
+
+    while (!queue.empty()) {
+        int vertex = queue.front();
+        queue.pop();
+        std::cout << vertex << " ";
+
+        for (const auto& neighbor : graph.getAdjList().at(vertex)) {
+            if (!visited[neighbor]) {
+                queue.push(neighbor);
+                visited[neighbor] = true;
+            }
+        }
+    }
+}
+
+
+
+//冯碧川的改动结束
