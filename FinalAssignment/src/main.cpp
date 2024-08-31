@@ -14,34 +14,42 @@ void printMemoryUsage() {  //内存性能测试
     std::cout << "Memory usage: " << physMemUsedByMe / 1024 << " KB" << std::endl;
 }
 
+void Kosaraju(const Graph& graph);
+
+std::vector<int> topologicalSort(const Graph& graph);
+
+std::vector<int> topologicalSortDFS(const Graph& graph);
+
 int main() {
 //    // 定义图的大小（用于邻接矩阵）
-//    int graphSize = 5;
+    int graphSize = 5;
 //
 //    // 创建图对象
-//    Graph graph(graphSize);
+    Graph graph(graphSize);
+
+    // 添加顶点（仅用于邻接表）
+    for (int i = 0; i < graphSize; ++i) {
+        graph.addVertex(i);
+    }
 //
-//    // 添加顶点（仅用于邻接表）
-//    for (int i = 0; i < graphSize; ++i) {
-//        graph.addVertex(i);
-//    }
-//
-//    // 添加边
-//    graph.addEdge(0, 1);
-//    graph.addEdge(1, 2);
-//    graph.addEdge(2, 3);
-//    graph.addEdge(3, 4);
-//    graph.addEdge(4, 0);
-//
-//    // 打印邻接表
-//    graph.printAdjList();
-//
-//    // 打印邻接矩阵
-//    graph.printAdjMatrix();
-//
-//    // 打印边列表
-//    graph.printEdgeList();
-//
+    // 添加边
+    graph.addEdge(0, 1);
+    graph.addEdge(1, 2);
+    graph.addEdge(2, 3);
+    graph.addEdge(3, 4);
+    graph.addEdge(4, 0);
+
+    // 打印邻接表
+    std::cout << "Original Graph's Adjacency List:" << std::endl;
+    graph.printAdjList();
+
+    // 打印邻接矩阵
+    std::cout << "Original Graph's Adjacency Matrix:" << std::endl;
+    graph.printAdjMatrix();
+
+    // 打印边列表
+    std::cout << "Original Graph's Edge List:" << std::endl;
+    graph.printEdgeList();
 
 //**************************   //sun A*算法测试
 //    // 在算法运行前记录内存使用
@@ -211,5 +219,80 @@ int main() {
 //        }
 //    }
     //lzy部分-后
+
+
+    // 测试 DFS
+    std::cout << "DFS starting from vertex 0: ";
+    std::vector<bool> visited(graphSize, false);
+    DFS(graph, 0, visited);
+    std::cout << std::endl;
+
+    // 测试 BFS
+    std::cout << "BFS starting from vertex 0: ";
+    BFS(graph, 0);
+    std::cout << std::endl;
+
+    // 生成有向图
+    Graph directedGraph = graph.generateDirectedGraph();
+
+    // 打印有向图的邻接表
+    std::cout << "有向图的邻接表:" << std::endl;
+    directedGraph.printAdjList();
+
+    // 打印有向图的邻接矩阵
+    std::cout << "有向图的邻接矩阵:" << std::endl;
+    directedGraph.printAdjMatrix();
+
+    // 测试拓扑排序
+    try {
+        std::vector<int> topoOrder = topologicalSort(directedGraph);
+        std::cout << "基于Kahn's 算法的拓扑排序: ";
+        for (int vertex : topoOrder) {
+            std::cout << vertex << " ";
+        }
+        std::cout << std::endl;
+    } catch (const std::runtime_error& e) {
+        std::cout << e.what() << std::endl;
+    }
+
+    // 测试基于 DFS 的拓扑排序
+    try {
+        std::vector<int> topoOrderDFS = topologicalSortDFS(directedGraph);
+        std::cout << "基于DFS的拓扑排序（DFS本身无法检测环路的存在，若是存在环路则会出现无法找到拓扑排序的情况。此处存在待优化的地方，有时间可以手动添加环路检测）: ";
+        for (int vertex : topoOrderDFS) {
+            std::cout << vertex << " ";
+        }
+        std::cout << std::endl;
+    } catch (const std::runtime_error& e) {
+        std::cout << e.what() << std::endl;
+    }
+
+
+
+    //测试kosaraju算法
+    Kosaraju(graph);
+    //测试割点和桥算法：
+    // 查找割点和桥
+    std::vector<bool> isAP(graphSize, false);
+    std::vector<std::pair<int, int>> bridges;
+    findArticulationPointsAndBridges(graph, isAP, bridges);
+
+    // 打印割点
+    std::cout << "Articulation Points: ";
+    for (int i = 0; i < graphSize; i++) {
+        if (isAP[i]) {
+            std::cout << i << " ";
+        }
+    }
+    std::cout << std::endl;
+
+    // 打印桥
+    std::cout << "Bridges: ";
+    for (const auto& bridge : bridges) {
+        std::cout << "(" << bridge.first << ", " << bridge.second << ") ";
+    }
+    std::cout << std::endl;
+
+
     return 0;
 }

@@ -1,4 +1,4 @@
-# Install script for directory: D:/System/Desktop/lzy/FinalAssignment_Group2/FinalAssignment
+# Install script for directory: C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "D:/software/CLion/CLion 2021.3.4/bin/mingw/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "E:/llvm-mingw-20240619-msvcrt-x86_64/bin/llvm-objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/System/Desktop/lzy/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/FENGBICHUAN/OneDrive - Högskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -9,6 +9,20 @@
 //A*
 void aStarSearch(const Graph& graph, int startId, int destId); //sun  A*
 
+
+//冯碧川的改动开始
+// 深度优先搜索 (DFS)
+void DFS(const Graph& graph, int startVertex, std::vector<bool>& visited);
+
+// 广度优先搜索 (BFS)
+void BFS(const Graph& graph, int startVertex);
+void Kosaraju(const Graph& graph);
+
+std::vector<int> topologicalSort(const Graph& graph);
+
+std::vector<int> topologicalSortDFS(const Graph& graph);
+void findArticulationPointsAndBridges(const Graph& graph, std::vector<bool>& isAP, std::vector<std::pair<int, int>>& bridges);
+//冯碧川的改动结束
 class UnionFind {   //sun 并查集
 public:
     // 构造函数，初始化 n 个节点的并查集

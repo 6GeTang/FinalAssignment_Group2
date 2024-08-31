@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "FinalAssignment::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-FinalAssignment-Debug-a65dba7b6c4b655b06a1.json",
+					"jsonFile" : "target-FinalAssignment-Debug-f603937722ccfc4cf4b6.json",
 					"name" : "FinalAssignment",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/System/Desktop/lzy/FinalAssignment_Group2/FinalAssignment/cmake-build-debug",
-		"source" : "D:/System/Desktop/lzy/FinalAssignment_Group2/FinalAssignment"
+		"build" : "C:/Users/FENGBICHUAN/OneDrive - H\u00f6gskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/cmake-build-debug",
+		"source" : "C:/Users/FENGBICHUAN/OneDrive - H\u00f6gskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 7
 	}
 }

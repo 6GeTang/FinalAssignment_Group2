@@ -45,17 +45,14 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
-				},
-				{
-					"fragment" : "-std=gnu++17"
+					"fragment" : "-g -std=gnu++17 -fansi-escape-codes -fcolor-diagnostics"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 2,
-					"path" : "D:/System/Desktop/lzy/FinalAssignment_Group2/FinalAssignment/include"
+					"path" : "C:/Users/FENGBICHUAN/OneDrive - H\u00f6gskolan Kristianstad/Skrivbordet/FinalAssignment_Group2/FinalAssignment/include"
 				}
 			],
 			"language" : "CXX",
