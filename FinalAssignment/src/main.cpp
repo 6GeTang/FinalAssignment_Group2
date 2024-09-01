@@ -517,7 +517,96 @@ int main() {
 //
 //
 //    //tg test end
+ // 无向图测试
+    std::cout << "Undirected Graph Test:" << std::endl;
+    Graph undirectedGraph(6);
+    undirectedGraph.addEdge(0, 1);
+    undirectedGraph.addEdge(0, 2);
+    undirectedGraph.addEdge(1, 3);
+    undirectedGraph.addEdge(2, 3);
+    undirectedGraph.addEdge(3, 4);
+    undirectedGraph.addEdge(4, 5);
 
+    std::cout << "\nUndirected Graph - Adjacency List:" << std::endl;
+    undirectedGraph.printAdjList();
+
+    std::cout << "\nUndirected Graph - Adjacency Matrix:" << std::endl;
+    undirectedGraph.printAdjMatrix();
+
+    std::cout << "\nUndirected Graph - Edge List:" << std::endl;
+    undirectedGraph.printEdgeList();
+
+    // 有向图测试
+    std::cout << "\nDirected Graph Test:" << std::endl;
+    // Graph directedGraph(6);
+    // directedGraph.addDirectedEdge(0, 1);
+    // directedGraph.addDirectedEdge(0, 2);
+    // directedGraph.addDirectedEdge(1, 3);
+    // directedGraph.addDirectedEdge(2, 3);
+    // directedGraph.addDirectedEdge(3, 4);
+    // directedGraph.addDirectedEdge(4, 5);
+
+    std::cout << "\nDirected Graph - Adjacency List:" << std::endl;
+    directedGraph.printAdjList();
+
+    std::cout << "\nDirected Graph - Adjacency Matrix:" << std::endl;
+    directedGraph.printAdjMatrix();
+
+    std::cout << "\nDirected Graph - Edge List:" << std::endl;
+    directedGraph.printEdgeList();
+
+    // 带权有向图测试
+    std::cout << "\nWeighted Directed Graph Test:" << std::endl;
+    Graph weightedDirectedGraph(6);
+    weightedDirectedGraph.addWeightedDirectedEdge(0, 1, 2.5);
+    weightedDirectedGraph.addWeightedDirectedEdge(0, 2, 1.5);
+    weightedDirectedGraph.addWeightedDirectedEdge(1, 3, 1.2);
+    weightedDirectedGraph.addWeightedDirectedEdge(2, 3, 0.7);
+    weightedDirectedGraph.addWeightedDirectedEdge(3, 4, 1.3);
+    weightedDirectedGraph.addWeightedDirectedEdge(4, 5, 2.8);
+
+    std::cout << "\nWeighted Directed Graph - Adjacency List:" << std::endl;
+    weightedDirectedGraph.printWeightAdjList();
+
+    std::cout << "\nDijkstra's Shortest Paths from Vertex 0 in Weighted Directed Graph:" << std::endl;
+    auto distances = Dijkstra(weightedDirectedGraph, 0);
+    for (int i = 0; i < distances.size(); ++i) {
+        std::cout << "Distance to vertex " << i << ": " << distances[i] << std::endl;
+    }
+
+    std::cout << "\nTarjan's Strongly Connected Components in Directed Graph:" << std::endl;
+    auto sccs = tarjanSCC(directedGraph);
+    for (const auto& scc : sccs) {
+        std::cout << "SCC: ";
+        for (int vertex : scc) {
+            std::cout << vertex << " ";
+        }
+        std::cout << std::endl;
+    }
+
+       // 测试随机无向图生成
+    std::cout << "\nRandom Undirected Graph:" << std::endl;
+    Graph randomUndirectedGraph = generateRandomGraph(5, 7);
+    randomUndirectedGraph.printAdjList();
+
+    // 测试随机有向图生成
+    std::cout << "\nRandom Directed Graph:" << std::endl;
+    Graph randomDirectedGraph = generateRandomDirectedGraph(5, 7);
+    randomDirectedGraph.printAdjList();
+
+    // 测试蒙特卡洛算法
+    std::cout << "\nMonte Carlo Estimation of Pi with 1000000 samples: " << std::endl;
+    double piEstimate = monteCarloPi(1000000);
+    std::cout << "Estimated Pi value: " << piEstimate << std::endl;
+
+    // 测试随机游走算法
+    std::cout << "\nRandom Walk on Directed Graph starting from vertex 0 for 10 steps:" << std::endl;
+    auto walkPath = randomWalk(directedGraph, 0, 10);
+    std::cout << "Random Walk Path: ";
+    for (int vertex : walkPath) {
+        std::cout << vertex << " ";
+    }
+    std::cout << std::endl;
 
     return 0;
 }

@@ -3,6 +3,7 @@
 
 Graph::Graph(int size) : size(size) {
     adjMatrix.resize(size, std::vector<int>(size, 0));
+    weightadjList.resize(size);  // Ding 初始化带权邻接表//sun A*
 }
 
 Graph::~Graph() {}
@@ -31,6 +32,16 @@ void Graph::weightAddEdge(int vertex1, int vertex2, int weight) { //liujun
     v.push_back(weight);
     weightadjEdgeList.push_back(v);
 }
+
+void Graph::addDirectedEdge(int vertex1, int vertex2) {  // New
+    adjList[vertex1].push_back(vertex2);
+    adjMatrix[vertex1][vertex2] = 1;
+    edgeList.emplace_back(vertex1, vertex2);
+}//ding
+
+void Graph::addWeightedDirectedEdge(int vertex1, int vertex2, double weight) {  // New
+    weightadjList[vertex1].push_back({vertex2, weight});
+}//ding
 
 void Graph::addEdge1(int vertex1, int vertex2, int value) {//lzy
     adjList[vertex1].push_back(vertex2);
@@ -117,6 +128,18 @@ const std::vector<std::pair<int, int>>& Graph::getEdgeList() const {
 int Graph::getSize() const {
     return size;
 }
+
+// 打印带权邻接表的方法
+void Graph::printWeightAdjList() const {
+    std::cout << "Weighted Adjacency List:" << std::endl;
+    for (int i = 0; i < weightadjList.size(); ++i) {
+        std::cout << i << ": ";
+        for (const auto& neighbor : weightadjList[i]) {
+            std::cout << "(" << neighbor.first << ", " << neighbor.second << ") ";
+        }
+        std::cout << std::endl;
+    }
+} //Ding 打印带权邻接表
 //冯碧川在此下面开始改动：
 // 生成有向图的方法
 Graph Graph::generateDirectedGraph() const {

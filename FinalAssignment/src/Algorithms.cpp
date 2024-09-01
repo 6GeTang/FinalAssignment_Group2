@@ -13,6 +13,9 @@
 #include <algorithm> //sun
 #include <numeric>  // 用于 std::accumulate //sun
 
+#include<random>
+#include<ctime>
+
 struct Node {   //sun  A*
     int id;
     double g;  // 从起点到当前节点的代价
@@ -1257,3 +1260,184 @@ int minPathCover(const Graph& graph) {
     return graph.getSize() - maxMatching;
 }
 //tg end
+
+std::vector<double> Dijkstra(const Graph& graph, int startId) {
+    int size = graph.getSize();
+    std::vector<double> dist(size, std::numeric_limits<double>::max()); // 使用double类型
+    dist[startId] = 0.0;
+
+    using pdi = std::pair<double, int>; // 距离和节点的对
+    std::priority_queue<pdi, std::vector<pdi>, std::greater<pdi>> pq;
+    pq.push({0.0, startId});
+
+    while (!pq.empty()) {
+        double currentDist = pq.top().first;
+        int currentId = pq.top().second;
+        pq.pop();
+
+        if (currentDist > dist[currentId]) {
+            continue;
+        }
+
+        for (const auto& neighbor : graph.getNeighbors(currentId)) {
+            int neighborId = neighbor.first;
+            double weight = neighbor.second; // 保持浮点数
+
+            if (dist[currentId] + weight < dist[neighborId]) {
+                dist[neighborId] = dist[currentId] + weight;
+                pq.push({dist[neighborId], neighborId});
+            }
+        }
+    }
+
+    return dist;
+}
+namespace {
+    void tarjanDFS(int u, int& index, const std::map<int, std::vector<int>>& adjList, std::vector<int>& indices,
+                   std::vector<int>& lowLinks, std::vector<bool>& onStack, std::vector<int>& stack,
+                   std::vector<std::vector<int>>& sccs) {
+        indices[u] = lowLinks[u] = index++;
+        stack.push_back(u);
+        onStack[u] = true;
+
+        // 确保在访问adjList.at(u)之前检查键u是否存在于adjList中
+        if (adjList.find(u) != adjList.end()) {  // 新增检查
+            for (int v : adjList.at(u)) {
+                if (indices[v] == -1) {
+                    tarjanDFS(v, index, adjList, indices, lowLinks, onStack, stack, sccs);
+                    lowLinks[u] = std::min(lowLinks[u], lowLinks[v]);
+                } else if (onStack[v]) {
+                    lowLinks[u] = std::min(lowLinks[u], indices[v]);
+                }
+            }
+        }
+
+        if (lowLinks[u] == indices[u]) {
+            std::vector<int> scc;
+            int v;
+            do {
+                v = stack.back();
+                stack.pop_back();
+                onStack[v] = false;
+                scc.push_back(v);
+            } while (u != v);
+            sccs.push_back(scc);
+        }
+    }
+}
+
+std::vector<std::vector<int>> tarjanSCC(const Graph& graph) {
+    int size = graph.getSize();
+    std::vector<int> indices(size, -1);
+    std::vector<int> lowLinks(size, -1);
+    std::vector<bool> onStack(size, false);
+    std::vector<int> stack;
+    std::vector<std::vector<int>> sccs;
+
+    int index = 0;
+    for (int i = 0; i < size; ++i) {
+        if (indices[i] == -1) {
+            tarjanDFS(i, index, graph.getAdjList(), indices, lowLinks, onStack, stack, sccs);
+        }
+    }
+
+    return sccs;
+}
+
+
+
+Graph generateRandomDirectedGraph(int numVertices, int numEdges) {
+    Graph directedGraph(numVertices);  // 创建一个有向图对象
+    srand(time(0));  // 使用当前时间作为随机数种子
+
+    for (int i = 0; i < numEdges; ++i) {
+        int u = rand() % numVertices;
+        int v = rand() % numVertices;
+
+        // 确保我们不会创建自环（从一个顶点指向它自己的边）
+        while (u == v) {
+            v = rand() % numVertices;
+        }
+
+        directedGraph.addDirectedEdge(u, v);  // 添加有向边
+    }
+
+    return directedGraph;
+}
+
+// 蒙特卡洛算法实现 (计算圆周率 Pi 的近似值)
+double monteCarloPi(int numSamples) {  //Ding 蒙特卡洛算法
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<> dist(0.0, 1.0);
+
+    int insideCircle = 0;
+    for (int i = 0; i < numSamples; ++i) {
+        double x = dist(gen);
+        double y = dist(gen);
+        if (x * x + y * y <= 1.0) {
+            insideCircle++;
+        }
+    }
+
+    return (4.0 * insideCircle) / numSamples;
+}
+
+// 随机游走算法实现
+std::vector<int> randomWalk(const Graph& graph, int startVertex, int steps) {  //Ding 随机游走算法
+    std::vector<int> walk;
+    walk.push_back(startVertex);
+
+    std::random_device rd;
+    std::mt19937 gen(rd());
+
+    int currentVertex = startVertex;
+    for (int i = 0; i < steps; ++i) {
+        if (graph.getAdjList().find(currentVertex) == graph.getAdjList().end()) {
+            std::cout << "Vertex " << currentVertex << " has no neighbors. Ending walk." << std::endl;
+            break;
+        }
+        const auto& neighbors = graph.getAdjList().at(currentVertex); // 确保使用正确的邻接表
+
+        std::cout << "Current Vertex: " << currentVertex << " has " << neighbors.size() << " neighbors." << std::endl;
+        if (neighbors.empty()) {
+            std::cout << "No neighbors found. Ending walk." << std::endl;
+            break;  // If no neighbors, end the walk
+        }
+
+        std::uniform_int_distribution<> dist(0, neighbors.size() - 1);
+        currentVertex = neighbors[dist(gen)];
+        walk.push_back(currentVertex);
+        std::cout << "Next Vertex: " << currentVertex << std::endl;
+    }
+
+    return walk;
+}
+
+Graph generateRandomGraph(int numVertices, int numEdges) {
+    Graph graph(numVertices);
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> vertexDist(0, numVertices - 1);
+    std::uniform_int_distribution<> weightDist(1, 10);
+
+    std::set<std::pair<int, int>> addedEdges;  // To avoid duplicate edges
+
+    // Manually count the number of edges
+    int edgeCount = 0;
+
+    while (edgeCount < numEdges) {
+        int u = vertexDist(gen);
+        int v = vertexDist(gen);
+        if (u == v || addedEdges.count({u, v}) || addedEdges.count({v, u})) {
+            continue;  // Avoid self-loops and duplicate edges
+        }
+
+        int weight = weightDist(gen);
+        graph.addDirectedEdge(u, v);  // Add the edge to the graph
+        addedEdges.insert({u, v});
+        edgeCount++;
+    }
+
+    return graph;
+}

@@ -45,17 +45,14 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
-				},
-				{
-					"fragment" : "-std=gnu++17"
+					"fragment" : "-g -std=gnu++17 -fdiagnostics-color=always"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/lenovo/Desktop/tg/FinalAssignment_Group2/FinalAssignment/include"
+					"path" : "D:/Desktop/\u65b0\u5efa\u6587\u4ef6\u5939/FinalAssignment_Group2/FinalAssignment/include"
 				}
 			],
 			"language" : "CXX",

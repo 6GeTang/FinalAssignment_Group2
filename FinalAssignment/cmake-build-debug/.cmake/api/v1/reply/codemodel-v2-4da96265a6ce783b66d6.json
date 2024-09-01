@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "FinalAssignment::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-FinalAssignment-Debug-2d6992c9a4b7f0154f71.json",
+					"jsonFile" : "target-FinalAssignment-Debug-b64d015bb9908f7038ce.json",
 					"name" : "FinalAssignment",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/lenovo/Desktop/tg/FinalAssignment_Group2/FinalAssignment/cmake-build-debug",
-		"source" : "C:/Users/lenovo/Desktop/tg/FinalAssignment_Group2/FinalAssignment"
+		"build" : "D:/Desktop/\u65b0\u5efa\u6587\u4ef6\u5939/FinalAssignment_Group2/FinalAssignment/cmake-build-debug",
+		"source" : "D:/Desktop/\u65b0\u5efa\u6587\u4ef6\u5939/FinalAssignment_Group2/FinalAssignment"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 7
 	}
 }

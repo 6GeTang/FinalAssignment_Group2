@@ -94,6 +94,23 @@ int maxBipartiteMatching(const Graph& bipartiteGraph);
 // 最小路径覆盖
 int minPathCover(const Graph& graph);
 
+// Dijkstra算法
+std::vector<double> Dijkstra(const Graph& graph, int startId);  //Ding Dijkstra算法
+
+// Tarjan算法
+std::vector<std::vector<int>> tarjanSCC(const Graph& graph);  //Ding Tarjan算法
+
+// 随机生成图算法
+Graph generateRandomGraph(int numVertices, int numEdges);  //Ding 随机生成图
+
+Graph generateRandomDirectedGraph(int numVertices, int numEdges);
+
+// 蒙特卡洛算法
+double monteCarloPi(int numSamples);  //Ding 蒙特卡洛算法
+
+// 随机游走算法
+std::vector<int> randomWalk(const Graph& graph, int startVertex, int steps);  //Ding 随机游走算法
+
 //tg end
 
 #endif //FINALASSIGNMENT_ALGORITHMS_H

@@ -39,6 +39,7 @@ public:
     void printAdjList() const;
     void printAdjMatrix() const;
     void printEdgeList() const;
+    void printWeightAdjList() const;  // Ding
 
     // 提供访问邻接表 矩阵 边列表的方法，供算法使用
     const std::map<int, std::vector<int>>& getAdjList() const;
@@ -46,6 +47,10 @@ public:
     const std::vector<std::pair<int, int>>& getEdgeList() const;
     const std::vector<std::vector<int>>& getWeightadjEdgeList() const; // liujun
 
+    // 新增：有向图专用函数
+    void addDirectedEdge(int vertex1, int vertex2);  // New
+    void addWeightedDirectedEdge(int vertex1, int vertex2, double weight);  // New
+    //ading
     int getSize() const;
 
     // 为最小路径覆盖添加的函数声明
