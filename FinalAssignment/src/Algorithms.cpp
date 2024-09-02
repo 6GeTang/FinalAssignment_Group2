@@ -311,6 +311,62 @@ int edmondsMST(int root, int V, std::vector<Edge>& edges, std::vector<Edge>& mst
     return cycleMSTWeight + accumulate(cycleWeight.begin(), cycleWeight.end(), 0);
 }
 
+int inCost[N], pre[N], id[N], vis[N];  //sun Edmonds算法
+
+int zhuliu(int n, int m, int root, Edge edges[]) { //sun Edmonds算法
+    int res = 0;
+    while (true) {
+        for (int i = 1; i <= n; ++i) inCost[i] = INF, id[i] = vis[i] = -1;
+        for (int i = 0; i < m; ++i) {
+            int u = edges[i].u, v = edges[i].v, w = edges[i].weight;
+            if (u != v && w < inCost[v]) {
+                inCost[v] = w;
+                pre[v] = u;
+            }
+        }
+        for (int i = 1; i <= n; ++i) {
+            if (i != root && inCost[i] == INF) {
+                return -1;
+            }
+        }
+        inCost[root] = 0;
+        int tn = 0;
+        for (int i = 1; i <= n; ++i) {
+            res += inCost[i];
+            int v = i;
+            while (vis[v] != i && id[v] == -1 && v != root) {
+                vis[v] = i;
+                v = pre[v];
+            }
+            if (v != root && id[v] == -1) {
+                id[v] = ++tn;
+                for (int u = pre[v]; u != v; u = pre[u]) id[u] = tn;
+            }
+        }
+        if (tn == 0) break;
+        for (int i = 1; i <= n; ++i) {
+            if (id[i] == -1) {
+                id[i] = ++tn;
+            }
+        }
+        int i = 0;
+        while (i < m) {
+            int vv = edges[i].v;
+            edges[i].u = id[edges[i].u], edges[i].v = id[edges[i].v];
+            if (edges[i].u != edges[i].v) {
+                edges[i++].weight -= inCost[vv];
+            } else {
+                std::swap(edges[i], edges[--m]);
+            }
+        }
+        n = tn;
+        root = id[root];
+    }
+    return res;
+}
+
+
+
 //lzy部分-前
 // 实现 Floyd-Warshall 算法
 void floydWarshall(const Graph& graph) {

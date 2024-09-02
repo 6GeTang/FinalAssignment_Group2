@@ -20,36 +20,39 @@ std::vector<int> topologicalSort(const Graph& graph);
 
 std::vector<int> topologicalSortDFS(const Graph& graph);
 
+
+
+int g[N][N]; //sun Edmonds算法
 int main() {
 //    // 定义图的大小（用于邻接矩阵）
-    int graphSize = 5;
+//    int graphSize = 5;
+////
+////    // 创建图对象
+//    Graph graph(graphSize);
 //
-//    // 创建图对象
-    Graph graph(graphSize);
-
-    // 添加顶点（仅用于邻接表）
-    for (int i = 0; i < graphSize; ++i) {
-        graph.addVertex(i);
-    }
+//    // 添加顶点（仅用于邻接表）
+//    for (int i = 0; i < graphSize; ++i) {
+//        graph.addVertex(i);
+//    }
+////
+//    // 添加边
+//    graph.addEdge(0, 1);
+//    graph.addEdge(1, 2);
+//    graph.addEdge(2, 3);
+//    graph.addEdge(3, 4);
+//    graph.addEdge(4, 0);
 //
-    // 添加边
-    graph.addEdge(0, 1);
-    graph.addEdge(1, 2);
-    graph.addEdge(2, 3);
-    graph.addEdge(3, 4);
-    graph.addEdge(4, 0);
-
-    // 打印邻接表
-    std::cout << "Original Graph's Adjacency List:" << std::endl;
-    graph.printAdjList();
-
-    // 打印邻接矩阵
-    std::cout << "Original Graph's Adjacency Matrix:" << std::endl;
-    graph.printAdjMatrix();
-
-    // 打印边列表
-    std::cout << "Original Graph's Edge List:" << std::endl;
-    graph.printEdgeList();
+//    // 打印邻接表
+//    std::cout << "Original Graph's Adjacency List:" << std::endl;
+//    graph.printAdjList();
+//
+//    // 打印邻接矩阵
+//    std::cout << "Original Graph's Adjacency Matrix:" << std::endl;
+//    graph.printAdjMatrix();
+//
+//    // 打印边列表
+//    std::cout << "Original Graph's Edge List:" << std::endl;
+//    graph.printEdgeList();
 
 //**************************   //sun A*算法测试
 //    // 在算法运行前记录内存使用
@@ -116,28 +119,28 @@ int main() {
 
 
 //*********************************  //sun Edmonds算法
-    int V = 4; // 顶点数量
-    std::vector<Edge> edges = {
-            {0, 1, 1},
-            {0, 2, 5},
-            {1, 2, 1},
-            {1, 3, 2},
-            {2, 3, 1},
-            {3,2,2},
-            {2,1,4},
-            {1,0,3}
-    };
-    int root = 0;
-
-    std::vector<Edge> mstEdges;  // 存储最小生成树中的边
-    int mstWeight = edmondsMST(root, V, edges, mstEdges);
-
-    std::cout << "Weight of the MST is " << mstWeight << std::endl;
-
-    std::cout << "Edges in the MST:" << std::endl;
-    for (const auto& edge : mstEdges) {
-        std::cout << edge.u << " -> " << edge.v << " (Weight: " << edge.weight << ")" << std::endl;
-    }
+//    int V = 4; // 顶点数量
+//    std::vector<Edge> edges = {
+//            {0, 1, 1},
+//            {0, 2, 5},
+//            {1, 2, 1},
+//            {1, 3, 2},
+//            {2, 3, 1},
+//            {3,2,2},
+//            {2,1,4},
+//            {1,0,3}
+//    };
+//    int root = 0;
+//
+//    std::vector<Edge> mstEdges;  // 存储最小生成树中的边
+//    int mstWeight = edmondsMST(root, V, edges, mstEdges);
+//
+//    std::cout << "Weight of the MST is " << mstWeight << std::endl;
+//
+//    std::cout << "Edges in the MST:" << std::endl;
+//    for (const auto& edge : mstEdges) {
+//        std::cout << edge.u << " -> " << edge.v << " (Weight: " << edge.weight << ")" << std::endl;
+//    }
 
 
 //    int V3 = 5;
@@ -166,6 +169,45 @@ int main() {
 //    for (const auto& edge : mstEdges) {
 //        std::cout << edge.u << " -> " << edge.v << " (Weight: " << edge.weight << ")" << std::endl;
 //    }
+
+    int n, m, root; //n是节点处，m是边数， root是根节点（不能从0开始）
+    std::cin >> n >> m >> root;
+
+    // 初始化图的权重为无穷大
+    for (int i = 1; i <= n; ++i)
+        for (int j = 1; j <= n; ++j)
+            g[i][j] = INF;
+
+    Edge edges[N];
+    int u, v, w;
+
+    // 输入边的信息并处理自环和重边
+    for (int i = 0; i < m; ++i) {
+        std::cin >> u >> v >> w;
+        if (u == v) continue;
+        g[u][v] = std::min(g[u][v], w);
+    }
+
+    m = 0;
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= n; ++j) {
+            if (g[i][j] != INF) {
+                edges[m].u = i;
+                edges[m].v = j;
+                edges[m++].weight = g[i][j];
+            }
+        }
+    }
+
+    // 调用 zhuliu 函数并输出结果
+    int result = zhuliu(n, m, root, edges);
+    std::cout << result << std::endl;
+
+
+
+
+
+
 
 //lzy部分-前
     // 测试 Floyd
@@ -221,77 +263,77 @@ int main() {
     //lzy部分-后
 
 
-    // 测试 DFS
-    std::cout << "DFS starting from vertex 0: ";
-    std::vector<bool> visited(graphSize, false);
-    DFS(graph, 0, visited);
-    std::cout << std::endl;
-
-    // 测试 BFS
-    std::cout << "BFS starting from vertex 0: ";
-    BFS(graph, 0);
-    std::cout << std::endl;
-
-    // 生成有向图
-    Graph directedGraph = graph.generateDirectedGraph();
-
-    // 打印有向图的邻接表
-    std::cout << "有向图的邻接表:" << std::endl;
-    directedGraph.printAdjList();
-
-    // 打印有向图的邻接矩阵
-    std::cout << "有向图的邻接矩阵:" << std::endl;
-    directedGraph.printAdjMatrix();
-
-    // 测试拓扑排序
-    try {
-        std::vector<int> topoOrder = topologicalSort(directedGraph);
-        std::cout << "基于Kahn's 算法的拓扑排序: ";
-        for (int vertex : topoOrder) {
-            std::cout << vertex << " ";
-        }
-        std::cout << std::endl;
-    } catch (const std::runtime_error& e) {
-        std::cout << e.what() << std::endl;
-    }
-
-    // 测试基于 DFS 的拓扑排序
-    try {
-        std::vector<int> topoOrderDFS = topologicalSortDFS(directedGraph);
-        std::cout << "基于DFS的拓扑排序（DFS本身无法检测环路的存在，若是存在环路则会出现无法找到拓扑排序的情况。此处存在待优化的地方，有时间可以手动添加环路检测）: ";
-        for (int vertex : topoOrderDFS) {
-            std::cout << vertex << " ";
-        }
-        std::cout << std::endl;
-    } catch (const std::runtime_error& e) {
-        std::cout << e.what() << std::endl;
-    }
-
-
-
-    //测试kosaraju算法
-    Kosaraju(graph);
-    //测试割点和桥算法：
-    // 查找割点和桥
-    std::vector<bool> isAP(graphSize, false);
-    std::vector<std::pair<int, int>> bridges;
-    findArticulationPointsAndBridges(graph, isAP, bridges);
-
-    // 打印割点
-    std::cout << "Articulation Points: ";
-    for (int i = 0; i < graphSize; i++) {
-        if (isAP[i]) {
-            std::cout << i << " ";
-        }
-    }
-    std::cout << std::endl;
-
-    // 打印桥
-    std::cout << "Bridges: ";
-    for (const auto& bridge : bridges) {
-        std::cout << "(" << bridge.first << ", " << bridge.second << ") ";
-    }
-    std::cout << std::endl;
+//    // 测试 DFS
+//    std::cout << "DFS starting from vertex 0: ";
+//    std::vector<bool> visited(graphSize, false);
+//    DFS(graph, 0, visited);
+//    std::cout << std::endl;
+//
+//    // 测试 BFS
+//    std::cout << "BFS starting from vertex 0: ";
+//    BFS(graph, 0);
+//    std::cout << std::endl;
+//
+//    // 生成有向图
+//    Graph directedGraph = graph.generateDirectedGraph();
+//
+//    // 打印有向图的邻接表
+//    std::cout << "有向图的邻接表:" << std::endl;
+//    directedGraph.printAdjList();
+//
+//    // 打印有向图的邻接矩阵
+//    std::cout << "有向图的邻接矩阵:" << std::endl;
+//    directedGraph.printAdjMatrix();
+//
+//    // 测试拓扑排序
+//    try {
+//        std::vector<int> topoOrder = topologicalSort(directedGraph);
+//        std::cout << "基于Kahn's 算法的拓扑排序: ";
+//        for (int vertex : topoOrder) {
+//            std::cout << vertex << " ";
+//        }
+//        std::cout << std::endl;
+//    } catch (const std::runtime_error& e) {
+//        std::cout << e.what() << std::endl;
+//    }
+//
+//    // 测试基于 DFS 的拓扑排序
+//    try {
+//        std::vector<int> topoOrderDFS = topologicalSortDFS(directedGraph);
+//        std::cout << "基于DFS的拓扑排序（DFS本身无法检测环路的存在，若是存在环路则会出现无法找到拓扑排序的情况。此处存在待优化的地方，有时间可以手动添加环路检测）: ";
+//        for (int vertex : topoOrderDFS) {
+//            std::cout << vertex << " ";
+//        }
+//        std::cout << std::endl;
+//    } catch (const std::runtime_error& e) {
+//        std::cout << e.what() << std::endl;
+//    }
+//
+//
+//
+//    //测试kosaraju算法
+//    Kosaraju(graph);
+//    //测试割点和桥算法：
+//    // 查找割点和桥
+//    std::vector<bool> isAP(graphSize, false);
+//    std::vector<std::pair<int, int>> bridges;
+//    findArticulationPointsAndBridges(graph, isAP, bridges);
+//
+//    // 打印割点
+//    std::cout << "Articulation Points: ";
+//    for (int i = 0; i < graphSize; i++) {
+//        if (isAP[i]) {
+//            std::cout << i << " ";
+//        }
+//    }
+//    std::cout << std::endl;
+//
+//    // 打印桥
+//    std::cout << "Bridges: ";
+//    for (const auto& bridge : bridges) {
+//        std::cout << "(" << bridge.first << ", " << bridge.second << ") ";
+//    }
+//    std::cout << std::endl;
 
     //测试 kruskal 和 prim
     // 创建图并添加边
@@ -518,95 +560,95 @@ int main() {
 //
 //    //tg test end
  // 无向图测试
-    std::cout << "Undirected Graph Test:" << std::endl;
-    Graph undirectedGraph(6);
-    undirectedGraph.addEdge(0, 1);
-    undirectedGraph.addEdge(0, 2);
-    undirectedGraph.addEdge(1, 3);
-    undirectedGraph.addEdge(2, 3);
-    undirectedGraph.addEdge(3, 4);
-    undirectedGraph.addEdge(4, 5);
-
-    std::cout << "\nUndirected Graph - Adjacency List:" << std::endl;
-    undirectedGraph.printAdjList();
-
-    std::cout << "\nUndirected Graph - Adjacency Matrix:" << std::endl;
-    undirectedGraph.printAdjMatrix();
-
-    std::cout << "\nUndirected Graph - Edge List:" << std::endl;
-    undirectedGraph.printEdgeList();
-
-    // 有向图测试
-    std::cout << "\nDirected Graph Test:" << std::endl;
-    // Graph directedGraph(6);
-    // directedGraph.addDirectedEdge(0, 1);
-    // directedGraph.addDirectedEdge(0, 2);
-    // directedGraph.addDirectedEdge(1, 3);
-    // directedGraph.addDirectedEdge(2, 3);
-    // directedGraph.addDirectedEdge(3, 4);
-    // directedGraph.addDirectedEdge(4, 5);
-
-    std::cout << "\nDirected Graph - Adjacency List:" << std::endl;
-    directedGraph.printAdjList();
-
-    std::cout << "\nDirected Graph - Adjacency Matrix:" << std::endl;
-    directedGraph.printAdjMatrix();
-
-    std::cout << "\nDirected Graph - Edge List:" << std::endl;
-    directedGraph.printEdgeList();
-
-    // 带权有向图测试
-    std::cout << "\nWeighted Directed Graph Test:" << std::endl;
-    Graph weightedDirectedGraph(6);
-    weightedDirectedGraph.addWeightedDirectedEdge(0, 1, 2.5);
-    weightedDirectedGraph.addWeightedDirectedEdge(0, 2, 1.5);
-    weightedDirectedGraph.addWeightedDirectedEdge(1, 3, 1.2);
-    weightedDirectedGraph.addWeightedDirectedEdge(2, 3, 0.7);
-    weightedDirectedGraph.addWeightedDirectedEdge(3, 4, 1.3);
-    weightedDirectedGraph.addWeightedDirectedEdge(4, 5, 2.8);
-
-    std::cout << "\nWeighted Directed Graph - Adjacency List:" << std::endl;
-    weightedDirectedGraph.printWeightAdjList();
-
-    std::cout << "\nDijkstra's Shortest Paths from Vertex 0 in Weighted Directed Graph:" << std::endl;
-    auto distances = Dijkstra(weightedDirectedGraph, 0);
-    for (int i = 0; i < distances.size(); ++i) {
-        std::cout << "Distance to vertex " << i << ": " << distances[i] << std::endl;
-    }
-
-    std::cout << "\nTarjan's Strongly Connected Components in Directed Graph:" << std::endl;
-    auto sccs = tarjanSCC(directedGraph);
-    for (const auto& scc : sccs) {
-        std::cout << "SCC: ";
-        for (int vertex : scc) {
-            std::cout << vertex << " ";
-        }
-        std::cout << std::endl;
-    }
-
-       // 测试随机无向图生成
-    std::cout << "\nRandom Undirected Graph:" << std::endl;
-    Graph randomUndirectedGraph = generateRandomGraph(5, 7);
-    randomUndirectedGraph.printAdjList();
-
-    // 测试随机有向图生成
-    std::cout << "\nRandom Directed Graph:" << std::endl;
-    Graph randomDirectedGraph = generateRandomDirectedGraph(5, 7);
-    randomDirectedGraph.printAdjList();
-
-    // 测试蒙特卡洛算法
-    std::cout << "\nMonte Carlo Estimation of Pi with 1000000 samples: " << std::endl;
-    double piEstimate = monteCarloPi(1000000);
-    std::cout << "Estimated Pi value: " << piEstimate << std::endl;
-
-    // 测试随机游走算法
-    std::cout << "\nRandom Walk on Directed Graph starting from vertex 0 for 10 steps:" << std::endl;
-    auto walkPath = randomWalk(directedGraph, 0, 10);
-    std::cout << "Random Walk Path: ";
-    for (int vertex : walkPath) {
-        std::cout << vertex << " ";
-    }
-    std::cout << std::endl;
+//    std::cout << "Undirected Graph Test:" << std::endl;
+//    Graph undirectedGraph(6);
+//    undirectedGraph.addEdge(0, 1);
+//    undirectedGraph.addEdge(0, 2);
+//    undirectedGraph.addEdge(1, 3);
+//    undirectedGraph.addEdge(2, 3);
+//    undirectedGraph.addEdge(3, 4);
+//    undirectedGraph.addEdge(4, 5);
+//
+//    std::cout << "\nUndirected Graph - Adjacency List:" << std::endl;
+//    undirectedGraph.printAdjList();
+//
+//    std::cout << "\nUndirected Graph - Adjacency Matrix:" << std::endl;
+//    undirectedGraph.printAdjMatrix();
+//
+//    std::cout << "\nUndirected Graph - Edge List:" << std::endl;
+//    undirectedGraph.printEdgeList();
+//
+//    // 有向图测试
+//    std::cout << "\nDirected Graph Test:" << std::endl;
+//    // Graph directedGraph(6);
+//    // directedGraph.addDirectedEdge(0, 1);
+//    // directedGraph.addDirectedEdge(0, 2);
+//    // directedGraph.addDirectedEdge(1, 3);
+//    // directedGraph.addDirectedEdge(2, 3);
+//    // directedGraph.addDirectedEdge(3, 4);
+//    // directedGraph.addDirectedEdge(4, 5);
+//
+//    std::cout << "\nDirected Graph - Adjacency List:" << std::endl;
+//    directedGraph.printAdjList();
+//
+//    std::cout << "\nDirected Graph - Adjacency Matrix:" << std::endl;
+//    directedGraph.printAdjMatrix();
+//
+//    std::cout << "\nDirected Graph - Edge List:" << std::endl;
+//    directedGraph.printEdgeList();
+//
+//    // 带权有向图测试
+//    std::cout << "\nWeighted Directed Graph Test:" << std::endl;
+//    Graph weightedDirectedGraph(6);
+//    weightedDirectedGraph.addWeightedDirectedEdge(0, 1, 2.5);
+//    weightedDirectedGraph.addWeightedDirectedEdge(0, 2, 1.5);
+//    weightedDirectedGraph.addWeightedDirectedEdge(1, 3, 1.2);
+//    weightedDirectedGraph.addWeightedDirectedEdge(2, 3, 0.7);
+//    weightedDirectedGraph.addWeightedDirectedEdge(3, 4, 1.3);
+//    weightedDirectedGraph.addWeightedDirectedEdge(4, 5, 2.8);
+//
+//    std::cout << "\nWeighted Directed Graph - Adjacency List:" << std::endl;
+//    weightedDirectedGraph.printWeightAdjList();
+//
+//    std::cout << "\nDijkstra's Shortest Paths from Vertex 0 in Weighted Directed Graph:" << std::endl;
+//    auto distances = Dijkstra(weightedDirectedGraph, 0);
+//    for (int i = 0; i < distances.size(); ++i) {
+//        std::cout << "Distance to vertex " << i << ": " << distances[i] << std::endl;
+//    }
+//
+//    std::cout << "\nTarjan's Strongly Connected Components in Directed Graph:" << std::endl;
+//    auto sccs = tarjanSCC(directedGraph);
+//    for (const auto& scc : sccs) {
+//        std::cout << "SCC: ";
+//        for (int vertex : scc) {
+//            std::cout << vertex << " ";
+//        }
+//        std::cout << std::endl;
+//    }
+//
+//       // 测试随机无向图生成
+//    std::cout << "\nRandom Undirected Graph:" << std::endl;
+//    Graph randomUndirectedGraph = generateRandomGraph(5, 7);
+//    randomUndirectedGraph.printAdjList();
+//
+//    // 测试随机有向图生成
+//    std::cout << "\nRandom Directed Graph:" << std::endl;
+//    Graph randomDirectedGraph = generateRandomDirectedGraph(5, 7);
+//    randomDirectedGraph.printAdjList();
+//
+//    // 测试蒙特卡洛算法
+//    std::cout << "\nMonte Carlo Estimation of Pi with 1000000 samples: " << std::endl;
+//    double piEstimate = monteCarloPi(1000000);
+//    std::cout << "Estimated Pi value: " << piEstimate << std::endl;
+//
+//    // 测试随机游走算法
+//    std::cout << "\nRandom Walk on Directed Graph starting from vertex 0 for 10 steps:" << std::endl;
+//    auto walkPath = randomWalk(directedGraph, 0, 10);
+//    std::cout << "Random Walk Path: ";
+//    for (int vertex : walkPath) {
+//        std::cout << vertex << " ";
+//    }
+//    std::cout << std::endl;
 
     return 0;
 }

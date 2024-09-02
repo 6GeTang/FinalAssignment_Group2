@@ -45,14 +45,17 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++17 -fdiagnostics-color=always"
+					"fragment" : "-g"
+				},
+				{
+					"fragment" : "-std=gnu++17"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 2,
-					"path" : "D:/Desktop/\u65b0\u5efa\u6587\u4ef6\u5939/FinalAssignment_Group2/FinalAssignment/include"
+					"path" : "F:/why/FinalAssignment_Group2/FinalAssignment/include"
 				}
 			],
 			"language" : "CXX",

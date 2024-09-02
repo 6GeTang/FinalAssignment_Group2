@@ -6,6 +6,11 @@
 #define FINALASSIGNMENT_ALGORITHMS_H
 #include "Graph.h"
 #include <vector>
+
+// 常量定义
+const int N = 1e4 + 10;  //sun Edmonds算法
+const int INF = 0x3f3f3f3f; //sun Edmonds算法
+
 //A*
 void aStarSearch(const Graph& graph, int startId, int destId); //sun  A*
 
@@ -56,6 +61,8 @@ struct Edge {       //sun Borůvka算法
 void boruvkaMST(int V, int E, std::vector<Edge>& edges); //sun Borůvka算法
 
 int edmondsMST(int root, int V, std::vector<Edge>& edges, std::vector<Edge>& mstEdges); //sun Edmonds算法
+
+int zhuliu(int n, int m, int root, Edge edges[]);//sun Edmonds算法
 
 //lzy部分-前
 //Floyd-Warshall算法(解决所有节点对之间的最短路径问题)
