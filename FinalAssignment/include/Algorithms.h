@@ -96,11 +96,6 @@ void inorderTraversal(const Graph& graph, int startVertex);
 void postorderTraversal(const Graph& graph, int startVertex);
 void levelOrderTraversal(const Graph& graph, int startVertex);
 
-bool bpm(const Graph& bipartiteGraph, int u, std::vector<bool>& visited, std::vector<int>& matchR);
-int maxBipartiteMatching(const Graph& bipartiteGraph);
-// 最小路径覆盖
-int minPathCover(const Graph& graph);
-
 // Dijkstra算法
 std::vector<double> Dijkstra(const Graph& graph, int startId);  //Ding Dijkstra算法
 

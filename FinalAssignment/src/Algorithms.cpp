@@ -1271,50 +1271,6 @@ void levelOrderTraversal(const Graph& graph, int startVertex) {
     std::cout << std::endl;
 }
 
-
-// 匈牙利算法实现最大匹配
-bool bpm(const Graph& bipartiteGraph, int u, std::vector<bool>& visited, std::vector<int>& matchR) {
-    int n = bipartiteGraph.getSize() / 2;
-
-    if (bipartiteGraph.getAdjList().find(u) == bipartiteGraph.getAdjList().end()) {
-        return false;  // 如果 u 没有邻居，直接返回 false
-    }
-
-    for (int v : bipartiteGraph.getAdjList().at(u)) {
-        v -= n;  // Adjust index for the second partition
-        if (!visited[v]) {
-            visited[v] = true;
-            if (matchR[v] < 0 || bpm(bipartiteGraph, matchR[v], visited, matchR)) {
-                matchR[v] = u;
-                return true;
-            }
-        }
-    }
-    return false;
-}
-
-
-// 计算最大匹配
-int maxBipartiteMatching(const Graph& bipartiteGraph) {
-    int n = bipartiteGraph.getSize() / 2;
-    std::vector<int> matchR(n, -1);  // Match array for second partition
-
-    int result = 0;
-    for (int u = 0; u < n; ++u) {
-        std::vector<bool> visited(n, false);
-        if (bpm(bipartiteGraph, u, visited, matchR)) {
-            result++;
-        }
-    }
-    return result;
-}
-
-// 计算最小路径覆盖
-int minPathCover(const Graph& graph) {
-    Graph bipartiteGraph = graph.constructBipartiteGraph();
-    int maxMatching = maxBipartiteMatching(bipartiteGraph);
-    return graph.getSize() - maxMatching;
-}
 //tg end
 
 std::vector<double> Dijkstra(const Graph& graph, int startId) {

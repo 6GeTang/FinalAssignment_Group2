@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "F:/why/FinalAssignment_Group2/FinalAssignment/src/Algorithms.cpp" "CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.obj" "gcc" "CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.obj.d"
-  "F:/why/FinalAssignment_Group2/FinalAssignment/src/Graph.cpp" "CMakeFiles/FinalAssignment.dir/src/Graph.cpp.obj" "gcc" "CMakeFiles/FinalAssignment.dir/src/Graph.cpp.obj.d"
-  "F:/why/FinalAssignment_Group2/FinalAssignment/src/main.cpp" "CMakeFiles/FinalAssignment.dir/src/main.cpp.obj" "gcc" "CMakeFiles/FinalAssignment.dir/src/main.cpp.obj.d"
+  "C:/Users/lenovo/Desktop/tg/FinalAssignment_Group2/FinalAssignment/src/Algorithms.cpp" "CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.obj" "gcc" "CMakeFiles/FinalAssignment.dir/src/Algorithms.cpp.obj.d"
+  "C:/Users/lenovo/Desktop/tg/FinalAssignment_Group2/FinalAssignment/src/Graph.cpp" "CMakeFiles/FinalAssignment.dir/src/Graph.cpp.obj" "gcc" "CMakeFiles/FinalAssignment.dir/src/Graph.cpp.obj.d"
+  "C:/Users/lenovo/Desktop/tg/FinalAssignment_Group2/FinalAssignment/src/main.cpp" "CMakeFiles/FinalAssignment.dir/src/main.cpp.obj" "gcc" "CMakeFiles/FinalAssignment.dir/src/main.cpp.obj.d"
   )
 
 # Targets to which this target links.
